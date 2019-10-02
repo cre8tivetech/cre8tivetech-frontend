@@ -11,11 +11,6 @@ import uix from "../assets/img/uix-icon.png";
 import marketing from "../assets/img/marketing-icon.png";
 import ablegeniusPortfolio from "../assets/img/ablegenius-portfolio.png";
 import toplinePortfolio from "../assets/img/topline-portfolio.png";
-import codeene from "../assets/img/codeene.png";
-import ablegenius from "../assets/img/ablegenius.png";
-import restable from "../assets/img/restable.png";
-import topline from "../assets/img/topline.png";
-import fix25 from "../assets/img/fix25.png";
 import Type from "../components/Type";
 import InstagramFeed from "../components/InstagramFeed"
 import Layout from "../components/layout"
@@ -48,7 +43,7 @@ class Landing extends Component {
 
   instaFeed = () =>{
     axios.get(
-      `https://api.instagram.com/v1/users/self/media/recent/?access_token=${process.env.INSTAGRAM_ACCESS_TOKEN}&count=8`
+      `https://api.instagram.com/v1/users/self/media/recent/?access_token=${process.env.GATSBY_INSTAGRAM_ACCESS_TOKEN}&count=8`
     )
       .then(res => {
         const size = 8

@@ -928,8 +928,8 @@ body {
     select:-webkit-autofill,
     select:-webkit-autofill:hover,
     select:-webkit-autofill:focus {
-      box-shadow: 0 0 0px 1000px #226d79 inset;
-      -webkit-box-shadow: 0 0 0px 1000px #226d79 inset;
+      box-shadow: 0 0 0px 1000px #1d2d5f inset;
+      -webkit-box-shadow: 0 0 0px 1000px #1d2d5f inset;
       -webkit-text-fill-color: #fff;
       background: transparent;
     }
@@ -988,7 +988,7 @@ label {
   font-size: 22px !important;
 }
 .zmdi-facebook:hover {
-  color: #226d79;
+  color: #1d2d5f;
 }
 
 .zmdi-instagram {
@@ -997,7 +997,7 @@ label {
   font-size: 22px !important; 
 }
 .zmdi-instagram:hover {
-  color: #226d79;
+  color: #1d2d5f;
 }
 
 .zmdi-twitter {
@@ -1005,7 +1005,7 @@ label {
   font-size: 22px !important; 
 }
 .zmdi-twitter:hover {
-  color: #226d79;
+  color: #1d2d5f;
 }
 
 .zmdi-linkedin {
@@ -1013,7 +1013,7 @@ label {
   font-size: 22px !important; 
 }
 .zmdi-linkedin:hover {
-  color: #226d79;
+  color: #1d2d5f;
 }
 
 .zmdi-github {
@@ -1021,7 +1021,7 @@ label {
   font-size: 22px !important; 
 }
 .zmdi-github:hover {
-  color: #226d79;
+  color: #1d2d5f;
 }
 
 .zmdi-youtube-play {
@@ -1029,7 +1029,7 @@ label {
   font-size: 22px !important; 
 }
 .zmdi-youtube-play:hover {
-  color: #226d79;
+  color: #1d2d5f;
 }
 
 
