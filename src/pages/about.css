@@ -1,0 +1,114 @@
+.dark-modal {
+    width: 100%;
+    height: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.82);
+    z-index: 101;
+    transition: all .2s ease-in-out;
+}.open-modal { height: 100vh; }
+
+.close-video {
+    display: none !important;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    color: #fff;
+    font-size: 1.5rem !important;
+    transition: all .2s ease-in-out;
+}.close-video:hover { color: #ffbc45; }
+.display-close-video { display: block !important; }
+
+.video-player {
+    color: #fff;
+    width: 100%;
+    height: 80%;
+    margin-top: 50px;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: none;
+    transition: all .2s ease-in-out;
+}.show-player { display: flex; }
+
+.play {
+    margin-top: 100px;
+    height: 60px;
+    width: 60px;
+    background: rgba(255, 255, 255, 0);
+    border: 2px solid #ffbc45;
+    border-radius: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .5s ease-in-out;
+}
+.play i {
+    font-size: 2rem;
+    transition: all .5s ease-in-out;
+    margin: 0 auto;
+    padding: 0;
+}
+.play:hover {
+    background: rgb(255, 255, 255);
+    border: 2px solid #1d2d5f;
+}
+.play:hover i {
+    font-size: 2.3rem;
+    color: #1d2d5f;
+}
+
+.play-text {
+    margin-top: 115px;
+    margin-left: 15px;
+    float: left;
+}
+
+/* Team */
+
+.team-feed {
+    margin: 20px 40px;
+    font-family: Montserrat-Alternates-Regular;
+}
+.team-image {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 2px solid #ffbc45;
+    margin: 0 auto;
+}
+.team-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+  
+.team-details {
+    /* margin: 0 auto; */
+    padding-top: 10px;
+    text-align: center;
+}
+
+.mission {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+.mission-item {
+    color: #fff;
+    border-radius: 4px;
+    /* background-color: rgba(255, 255, 255, 1); */
+    padding: 40px 30px 40px 30px;
+    margin: 20px;
+    -webkit-box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.55);
+    -moz-box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.55);
+    box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.55);
+}
