@@ -6,7 +6,7 @@ import TextInput from "../components/FormInput/TextInput";
 import EmailInput from "../components/FormInput/EmailInput";
 import BudgetInput from "../components/FormInput/BudgetInput";
 import validate from "../components/validator";
-import messagesRef from "../components/firebase";
+import getFirebase from "../components/firebase";
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -14,6 +14,8 @@ import SEO from "../components/seo"
 class HireUs extends Component {
 
   state = {
+    database: null,
+    messagesRef: null,
     trySubmit: false,
 
     formIsValid: false,
@@ -63,6 +65,20 @@ class HireUs extends Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
+    const lazyApp = import('@firebase/app')
+    const lazyDatabase = import('@firebase/database')
+
+    Promise.all([lazyApp, lazyDatabase]).then(([firebase]) => {
+      const database = getFirebase(firebase).database()
+      
+      //Reference messeges collection
+      const messagesRef = getFirebase(firebase).database().ref('messeges');
+
+      this.setState({
+        database,
+        messagesRef
+      })
+    })
   }
 
   changeHandler = event => {
@@ -115,7 +131,7 @@ class HireUs extends Component {
     }
 
     // Sending Message to Firebase
-    let newmessagesRef = messagesRef.push();
+    let newmessagesRef = this.state.messagesRef.push();
     newmessagesRef.set(data)
     // console.log(data)
 
