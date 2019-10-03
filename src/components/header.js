@@ -31,7 +31,7 @@ class Header extends Component {
     
     return (
       <Fragment>
-      
+      {console.log(this.props.path.pathname)}
       <header className="main-header">
         <div className="container">
           <div className="row main">
