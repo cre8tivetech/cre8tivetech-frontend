@@ -26,8 +26,13 @@ const Layout = ({ children, location }) => {
   )
 }
 
+Layout.defaultProps = {
+  location: {}
+}
+
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  location: PropTypes.objectOf(PropTypes.object)
 }
 
 export default Layout
