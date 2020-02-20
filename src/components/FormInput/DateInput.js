@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NameInput = props => {
+const DateInput = props => {
 
     let formControl = "form-control";
 
@@ -10,10 +10,10 @@ const NameInput = props => {
 
     return (
         <div className="form-group">
-            <label for="name"><i className="zmdi zmdi-account"></i></label>
+            <label for="date"><i className="zmdi zmdi-time"></i></label>
             <input type="text" 
-            name="name"
-            id="name"
+            name="date"
+            id="date"
             {...props} 
             />
             <div className={formControl}>Minimum of 3 letters</div>
@@ -21,4 +21,4 @@ const NameInput = props => {
     );
 }
 
-export default NameInput;
+export default DateInput;

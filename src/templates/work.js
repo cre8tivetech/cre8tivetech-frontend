@@ -14,7 +14,7 @@ const loader = (
 )
 
 const LoadableComponent = MyLoadable({
-  loader: () => import('../components/pageComponents/homePage'),
+  loader: () => import('../components/pageComponents/workPage'),
   loading() {
     return (
       <div className="loader">{loader}</div>
@@ -22,36 +22,28 @@ const LoadableComponent = MyLoadable({
   }
 });
 
-class Home extends Component {
+class Work extends Component {
   render() {
-    const { data } = this.props
-    console.log(data);
+    const {
+      data,
+      location,
+      pageContext,
+    } = this.props
+    console.log(this.props);
     if (data.wpgraphql) {
-      return <LoadableComponent data={data}/>;
+      return <LoadableComponent data={data} location={location} pageContext={pageContext} />;
     }
   }
 }
 
-export default Home;
+export default Work
 
 export const query = graphql`
-  { 
+  query GET_PAGES($ids: [ID]) {
     wpgraphql {
-      pages(first: 2) {
+      pages(where: { in: $ids }) {
         nodes {
-          id
-          title
-          content
-          uri
-          featuredImage{
-            sourceUrl
-          }
-          projects{
-            name
-            content
-            tags
-            description
-          }   
+          ...PageEntryFragment
         }
       }
     }

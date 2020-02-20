@@ -14,7 +14,6 @@ const EmailInput = props => {
             <input type="email" 
                 name="email"
                 id="email"
-                autocomplete="new-password"
                 {...props} 
             />
             <div className={formControl}>Email address is invalid</div>

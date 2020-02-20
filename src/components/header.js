@@ -36,34 +36,38 @@ class Header extends Component {
         <div className="container">
           <div className="row main">
             <Link to="/" className="main-header__brand">
-              <img src={logo} alt="C8T - Your favorite dev company" />
+              <img className="lazyload" data-src={logo} alt="C8T - Your favorite dev company" />
             </Link>
             <nav className="header-nav">
                   <ul>
+
+                      <li className="list">
+                        <Link className="underline-from-left" to={`/#services`}>What We Offer</Link>
+                      </li>
 
                       <li className="list active">
                         <Link className="underline-from-left" to="/about">About Us</Link>
                       </li>
                       
                       <li className="list">
-                        <Link className="underline-from-left" to="/#">Projects</Link>
-                      </li>
-
-                      <li className="list">
-                        <Link className="underline-from-left" to={`/#services`}>What We Offer</Link>
+                        <Link className="underline-from-left" to="/work">Work</Link>
                       </li>
                   
                       <li className="list">
-                        <Link className="underline-from-left" to="/#">Blog</Link>
+                        <Link className="underline-from-left" to="/blog">Blog</Link>
+                      </li>
+
+                      <li className="list">
+                        <Link className="underline-from-left" to="/hire-us">Let's Talk</Link>
                       </li>
     
-                      <Link to="/hire-us">
+                      {/* <Link to="/hire-us">
                         {this.props.path.pathname === "/hire-us"?
                             <button className="nav-btn red">Hire Us</button>
                         : 
                             <button className="nav-btn">Hire Us</button>
                         }
-                      </Link>
+                      </Link> */}
                       
                   </ul>  
             </nav>
@@ -72,9 +76,9 @@ class Header extends Component {
           </div>
           <nav className="mobile-nav">
             <ul>
-                      
-              <li className="list active">
-                <Link onClick={this.closeMobileNav} className="underline-from-left" to="/">Home</Link>
+
+              <li className="list">
+                <Link onClick={this.closeMobileNav} className="underline-from-left" to={ `/#services` }>What We Offer</Link>
               </li>
 
               <li className="list active">
@@ -82,24 +86,24 @@ class Header extends Component {
               </li>
               
               <li className="list">
-                <Link onClick={this.closeMobileNav} className="underline-from-left" to="/#">Projects</Link>
+                <Link onClick={this.closeMobileNav} className="underline-from-left" to="/work">Work</Link>
               </li>
 
               <li className="list">
-                <Link onClick={this.closeMobileNav} className="underline-from-left" to={ `/#services` }>What We Offer</Link>
-              </li>
-          
-              <li className="list">
-                <Link onClick={this.closeMobileNav} className="underline-from-left" to="/#">Blog</Link>
+                <Link onClick={this.closeMobileNav} className="underline-from-left" to="/blog">Blog</Link>
               </li>
 
-              <Link onClick={this.closeMobileNav} to="/hire-us">
+              <li className="list">
+                <Link onClick={this.closeMobileNav} className="underline-from-left" to="/hire-us">Let's Talk</Link>
+              </li>
+
+              {/* <Link onClick={this.closeMobileNav} to="/hire-us">
                 {this.props.path.pathname === "/hire-us"?
                     <button className="nav-btn red">Hire Us</button>
                 : 
                     <button className="nav-btn">Hire Us</button>
                 }
-              </Link>
+              </Link> */}
             </ul>
           </nav>
         </div>
