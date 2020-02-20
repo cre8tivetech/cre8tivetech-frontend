@@ -8,7 +8,7 @@ const InstagramFeed = props => {
         : null 
       }
       <a href={props.link}>
-        <figure><img src={props.image} alt=""/></figure>
+        <figure><img className="lazyload" data-src={props.image} alt=""/></figure>
       </a>
       
         
