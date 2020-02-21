@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "gatsby";
-import Loader from 'react-loader-spinner'
 import axios from "axios";
 
 import mac from "../../assets/img/mac.png";
@@ -10,15 +9,11 @@ import software from "../../assets/img/software-icon.png";
 import brand from "../../assets/img/brand-icon.png";
 import uix from "../../assets/img/uix-icon.png";
 import marketing from "../../assets/img/marketing-icon.png";
-// import ablegeniusPortfolio from "../../assets/img/ablegenius-portfolio.png";
-// import toplinePortfolio from "../../assets/img/topline-portfolio.png";
 import Type from "../Type";
 import InstagramFeed from "../InstagramFeed"
 import Layout from "../layout"
 import SEO from "../seo"
 import PageEntry from "./pageEntry"
-
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
 class Landing extends Component {
   state = {
@@ -71,16 +66,6 @@ class Landing extends Component {
   }
 
   render() {
-    const loader = (
-      <Loader
-           type="Puff"
-           color="#1d2d5f"
-           height={80}
-           width={80}
-          //  timeout={3000} //3 secs
-  
-        />
-    )
     const { instaFeed, loading } = this.state;
     const { data } = this.props
 

@@ -1,11 +1,8 @@
 import React, { Component } from "react"
-import { graphql, navigate, Link } from "gatsby"
-import Loader from 'react-loader-spinner'
+import { navigate, Link } from "gatsby"
 import PostEntry from "../pageComponents/postEntry"
 import Layout from "../layout"
 import SEO from "../seo"
-
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
 class BlogPage extends Component {
   renderPreviousLink = () => {
@@ -49,16 +46,6 @@ class BlogPage extends Component {
   }
 
   render() {
-    const loader = (
-      <Loader
-           type="Puff"
-           color="#1d2d5f"
-           height={80}
-           width={80}
-          //  timeout={3000} //3 secs
-  
-        />
-    )
     const {
       data,
       location,

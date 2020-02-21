@@ -29,10 +29,7 @@ export const query = graphql`
       sourceUrl
     }
     projects{
-      name
-      content
       tags
-      description
     }   
   }
 `

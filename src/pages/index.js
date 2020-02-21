@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import MyLoadable from '../components/loader';
 import Loader from 'react-loader-spinner'
 
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 import '../components/loader.css';
 
 const loader = (
@@ -35,7 +36,7 @@ class Home extends Component {
 export default Home;
 
 export const query = graphql`
-  { 
+  query { 
     wpgraphql {
       pages(first: 2) {
         nodes {
@@ -47,8 +48,6 @@ export const query = graphql`
             sourceUrl
           }
           projects{
-            name
-            content
             tags
             description
           }   

@@ -61,7 +61,7 @@ class Footer extends Component {
                   <p><span className="sub-big sub-bold">SUBSCRIBE</span><br/> TO OUR <br/><span className="sub-big">NEWSLETTER</span></p>
                   <form>
                     <div className="form-group">
-                      <label for="email"><i className="zmdi zmdi-email"></i></label>
+                      <label htmlFor="email"><i className="zmdi zmdi-email"></i></label>
                       <input type="email" name="email" placeholder="Enter Your Email"></input>
                     </div>
                     <div className="form-group">

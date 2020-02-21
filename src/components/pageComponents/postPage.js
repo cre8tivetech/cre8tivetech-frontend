@@ -10,7 +10,7 @@ const renderTermNodes = (nodes, title) => (
     {nodes.map(term => (
       <div>{term.name}</div>
     ))}
-  </div>
+  </div> 
 )
 
 const renderTerms = (categoryNodes = [], tagNodes = []) => (
@@ -47,7 +47,6 @@ const PostPage = props => {
                 <div className="single__box-meta">
                   <p><span className="author">{post.author.name}</span> - {readTime} min read</p>
                 </div>
-                {/* <div className="play"></div> <p className="play-text">Take a Tour</p> */}
               </div>
             </div>
           </div>
@@ -57,7 +56,7 @@ const PostPage = props => {
           <div className="container">
             <div className="row">
             
-                <div class="col-12 single-post_content">
+                <div className="col-12 single-post_content">
                 <div dangerouslySetInnerHTML={{ __html: content }} />
                   {post.categories.nodes.length || post.tags.nodes.length
                   ? renderTerms(post.categories.nodes, post.tags.nodes)
@@ -67,10 +66,6 @@ const PostPage = props => {
 
           </div>
         </section>
-
-        <div>
-          
-        </div>
 
     </Layout>
   )

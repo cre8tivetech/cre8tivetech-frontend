@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import MyLoadable from '../components/loader';
 import Loader from 'react-loader-spinner'
 
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 import '../components/loader.css';
 
 const loader = (
