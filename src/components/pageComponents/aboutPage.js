@@ -12,6 +12,7 @@ import fix25 from "../../assets/img/fix25.png";
 import Layout from "../layout"
 import SEO from "../seo"
 import './about.css'
+import image from "../../assets/img/about.jpg";
 
 class AboutPage extends Component {
   state = {
@@ -43,6 +44,13 @@ class AboutPage extends Component {
   }
 
   render() {
+    const mystyle = {
+      background: `linear-gradient(180deg, rgba(29,45,95,0.8) 10%, rgba(64,206,227,0.8) 90%), url(${image})`,
+      backgroundPosition: 'center, center',
+      backgroundSize: 'cover, cover',
+      backgroundRepeat: 'no-repeat',
+      minHeight: '70vh',
+    };
     return (
         <Layout location={this.props.location}>
         <SEO title="Take a Tour and Learn Page Us - Your Branding and Software Agency" />
@@ -66,7 +74,7 @@ class AboutPage extends Component {
             }
           </div>
         </div>
-        <section className="boxa">
+        <section className="boxa" style={mystyle}>
           <div className="container">
             <div className="row intro">
               <div className="col-12 intro__text"> 
@@ -87,12 +95,12 @@ class AboutPage extends Component {
           </div>
         </section>
 
-        <section id="services" className="boxb">
+        <section id="team" className="boxb">
           <div className="container boxb__content">
 
               <h3 className="l1-txt1 txt-center p-b-80">Team <i className="dot-box dot-box_yellow"></i></h3>
 
-            <div className="row">
+            <div className="row team">
             
                 <div class="col-3 team-feed">
                   <div className="team-image">
@@ -139,7 +147,7 @@ class AboutPage extends Component {
           </div>
         </section>
 
-        <section id="about" className="boxf">
+        <section className="boxf">
           <div className="container">
 
             <div className="row">

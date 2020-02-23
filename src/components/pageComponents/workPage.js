@@ -1,8 +1,10 @@
 import React, { Component } from "react"
 import { navigate } from "gatsby"
+
 import PageEntry from "./pageEntry"
 import Layout from "../layout"
 import SEO from "../seo"
+import image from "../../assets/img/work.jpg";
 
 class WorkPage extends Component {
   renderPreviousLink = () => {
@@ -52,11 +54,17 @@ class WorkPage extends Component {
       pageContext: { pageNumber },
     } = this.props
     const blogPageNumber = pageNumber ? ` Page ${pageNumber}` : ``
-    console.log(data.wpgraphql.pages.nodes);
+    const mystyle = {
+      background: `linear-gradient(180deg, rgba(29,45,95,0.8) 10%, rgba(64,206,227,0.8) 90%), url(${image})`,
+      backgroundPosition: 'center, center',
+      backgroundSize: 'cover, cover',
+      backgroundRepeat: 'no-repeat',
+      minHeight: '70vh',
+    };
     return (
       <Layout pageNumber={pageNumber} location={{ location }}>
         <SEO title={`Work${blogPageNumber}`} />
-          <section className="boxa-hire">
+          <section className="boxa" style={mystyle}>
             <div className="container">
               <div className="intro">
                 <div className="col-6 intro__text">

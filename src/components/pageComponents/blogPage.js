@@ -89,7 +89,7 @@ class BlogPage extends Component {
             </div>
           : null
           }
-            <div className="row">
+            <div className="blog">
             {data &&
             data.wpgraphql &&
             data.wpgraphql.posts.nodes.map(post => (

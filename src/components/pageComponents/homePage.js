@@ -9,6 +9,7 @@ import software from "../../assets/img/software-icon.png";
 import brand from "../../assets/img/brand-icon.png";
 import uix from "../../assets/img/uix-icon.png";
 import marketing from "../../assets/img/marketing-icon.png";
+import image from "../../assets/img/home.jpg";
 import Type from "../Type";
 import InstagramFeed from "../InstagramFeed"
 import Layout from "../layout"
@@ -69,10 +70,17 @@ class Landing extends Component {
     const { instaFeed, loading } = this.state;
     const { data } = this.props
 
+    const mystyle = {
+      background: `linear-gradient(180deg, rgba(29,45,95,0.8) 10%, rgba(64,206,227,0.8) 90%), url(${image})`,
+      backgroundPosition: 'center, center top',
+      backgroundSize: 'cover, cover',
+      backgroundRepeat: 'no-repeat',
+      minHeight: '70vh',
+    };
     return (
       <Layout location={this.props.location}>
         <SEO title={`Web Development, Mobile App, Brand Identity, User Experience Design, Software & Digital Marketing`} />
-        <section className="boxa">
+        <section className="box-home" style={mystyle}>
           <div className="container">
             <div className="row intro">
               <div className="col-6 intro__text">
@@ -147,7 +155,7 @@ class Landing extends Component {
         <section className="boxc boxc_red-bg">
           <div className="container">
 
-          <h3 className="l1-txt1 txt-center p-b-80">Our Work <i className="dot-box dot-box_blue"></i></h3>
+          <h3 className="l1-txt1 txt-center p-t-80 p-b-80">Our Work <i className="dot-box dot-box_blue"></i></h3>
           <div className="row">
             {data &&
             data.wpgraphql &&
@@ -173,7 +181,7 @@ class Landing extends Component {
 
             <div className="row">
               <div>
-                <h3 className="l1-txt1 txt-center p-b-80">About Us <i className="dot-box dot-box_yellow"></i></h3>
+                <h3 className="l1-txt1 txt-center p-t-80 p-b-40">About Us <i className="dot-box dot-box_yellow"></i></h3>
                 <h4>At Cre8tive Tech <i className="underline-box"></i></h4>
                 <p>We are focused on the provision of digital 
                   and IT solutions, aimed at driving the effective 
@@ -200,7 +208,7 @@ class Landing extends Component {
             <div className="row">
 
               <div className="col-12">
-                <h3 className="l1-txt1 txt-center p-b-80">Our Stories <i className="dot-box dot-box_yellow"></i></h3>
+                <h3 className="l1-txt1 txt-center p-t-40 p-b-40">Our Stories <i className="dot-box dot-box_yellow"></i></h3>
                 <h4>What's happening... <i className="underline-box"></i></h4>
                 <p>Follow us on Instagram, Facebook, Linkedin and Medium for inside stories, latest projects, thoughts, and behind the scenes from the Cre8tive Tech media.</p>
               </div>

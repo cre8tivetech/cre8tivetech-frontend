@@ -1,75 +1,66 @@
 import React, { Component, Fragment } from "react";
+import { Link } from 'gatsby';
 
 class Footer extends Component {
-
-  // state = {
-  //   // database: null,
-  //   // messagesRef: null,
-  //   // trySubmit: false,
-
-  //   formIsValid: false,
-
-  //   showConfirmMsg: false,
-
-  //   formControls: {
-  //     email: {
-  //       value: '',
-  //       placeholder: "Please enter your email address",
-  //       valid: false,
-  //       touched: false,
-  //       validationRules: {
-  //         minLength: 4,
-  //         isEmail: true,
-  //         isRequired: true
-  //       }
-  //     },
-  //     name: {
-  //       value: '',
-  //       placeholder: "Please enter your name",
-  //       valid: false,
-  //       touched: false,
-  //       validationRules: {
-  //         minLength: 3,
-  //         isRequired: true
-  //       }
-  //     },
-  //   }
-  // }
-
   render() {
     return (
       <Fragment>
+        
         <section id="contact" className="boxg">
           <div className="container boxg__content">
 
-            <div className="row">
-              <div className="col-6 about">
+            <div className="sub-footer">
+              <div className="col-4 sub-footer_box">
                 <h4>Ready to start a project? <i className="underline-box"></i></h4>
                 <p className="p-b-20">Let's build something awesome together!<br/> 
                   Email us at - hello@cre8tivetech.com<br/> or call +2348136217902, +2348151736887</p>
+
+              </div>
+
+              <div className="col-4 sub-footer_box">
 
                 <h4>Head Office <i className="underline-box"></i></h4>
                 <p>No 5 Association Close, Association Estate,<br/> 
                   Mowe, Ogun State,<br/>
                   Nigeria.</p>
-                
-                  <a href="/hire-us"><button className="contact__btn">Request Quote ➜</button></a>
               </div>
-              <div className="col-6 subscribe">
-                <div className="email-img"></div>
-                <div className="email-subscribe">
-                  <p><span className="sub-big sub-bold">SUBSCRIBE</span><br/> TO OUR <br/><span className="sub-big">NEWSLETTER</span></p>
-                  <form>
-                    <div className="form-group">
-                      <label htmlFor="email"><i className="zmdi zmdi-email"></i></label>
-                      <input type="email" name="email" placeholder="Enter Your Email"></input>
-                    </div>
-                    <div className="form-group">
-                      <input name="btn" type="submit" value="SUBSCRIBE"></input>
-                      {/* {props.showConfirmMsg? (<p className="success">Thanks for your Message!</p>) : null} */}
-                    </div>
-                  </form>
+
+              <div className="col-4 sub-footer_box">
+                <h4>Quick Links <i className="underline-box"></i></h4>
+                <div className="sub-footer_links">
+                  <ul>
+                    <li className="list">
+                      <Link className="underline-from-left" to={`about/#team`}>Team</Link>
+                    </li>
+                    <li className="list">
+                      <Link className="underline-from-left" to="/work">Our Work</Link>
+                    </li>
+                    <li className="list">
+                      <Link className="underline-from-left" to="/about">About Us</Link>
+                    </li>
+                    <li className="list">
+                      <Link className="underline-from-left" to="/hire-us">Hire Us</Link>
+                    </li>
+                    
+                  </ul>
+
+                  <ul>
+                    <li className="list">
+                      <Link className="underline-from-left" to={`/#services`}>Services</Link>
+                    </li>
+                    <li className="list">
+                      <Link className="underline-from-left" to="/blog">Blog</Link>
+                    </li>
+                    <li className="list">
+                      <Link className="underline-from-left" to="/privacy-policy">Privacy</Link>
+                    </li>
+                  </ul>
                 </div>
+                
+              </div>
+
+              <div className="col-12 sub-footer_box">
+                <a href="/hire-us"><button className="contact__btn">Request Quote ➜</button></a>
               </div>
 
             </div>

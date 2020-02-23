@@ -16,7 +16,7 @@ const PrivacyPolicy = (props) => {
       <SEO title="Privacy Policy" />
       <section className="boxa-single-post" style={mystyle}>
         <div className="container">
-          <div className="row intro">
+          <div className="intro">
             <div className="col-6 intro__text">
               <h3 className="l1-txt2 p-b-40">Privacy Policy <i className="dot-box dot-box_yellow"></i></h3>            
               <div className="single__box-meta">

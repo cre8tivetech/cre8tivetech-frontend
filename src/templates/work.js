@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { graphql } from 'gatsby';
 import MyLoadable from '../components/loader';
 import Loader from 'react-loader-spinner'
 

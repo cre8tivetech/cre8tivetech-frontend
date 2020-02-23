@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import Loader from 'react-loader-spinner'
 // import { Link } from "gatsby";
 
 import NameInput from "../FormInput/NameInput";
@@ -11,6 +12,9 @@ import validate from "../validator";
 import getFirebase from "../firebase";
 import Layout from "../layout"
 import SEO from "../seo"
+import Modal from "./modal";
+
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
 
 class HireUsPage extends Component {
@@ -86,6 +90,7 @@ class HireUsPage extends Component {
         }
       },
       uix: {
+        checkBtn: true,
         checked: false,
         valid: true,
         validationRules: {
@@ -93,6 +98,7 @@ class HireUsPage extends Component {
         }
       },
       web: {
+        checkBtn: true,
         checked: false,
         valid: true,
         validationRules: {
@@ -100,6 +106,7 @@ class HireUsPage extends Component {
         }
       },
       app: {
+        checkBtn: true,
         checked: false,
         valid: true,
         validationRules: {
@@ -107,6 +114,7 @@ class HireUsPage extends Component {
         }
       },
       branding: {
+        checkBtn: true,
         checked: false,
         valid: true,
         validationRules: {
@@ -114,6 +122,7 @@ class HireUsPage extends Component {
         }
       },
       marketing: {
+        checkBtn: true,
         checked: false,
         valid: true,
         validationRules: {
@@ -121,6 +130,7 @@ class HireUsPage extends Component {
         }
       },
       others: {
+        checkBtn: true,
         checked: false,
         valid: true,
         validationRules: {
@@ -166,7 +176,9 @@ class HireUsPage extends Component {
     };
     updatedFormElement.value = value;
     updatedFormElement.touched = true;
-    updatedFormElement.checked = !updatedFormElement.checked;
+    if (updatedFormElement.checkBtn) {
+      updatedFormElement.checked = !updatedFormElement.checked;
+    }
     
     
     updatedFormElement.valid = validate(value, updatedFormElement.validationRules);
@@ -181,23 +193,39 @@ class HireUsPage extends Component {
     
     this.setState({
       formControls: updatedControls,
-      formIsValid: formIsValid
+      formIsValid: formIsValid,
+      showConfirmMsg: false
     });
     
     // console.log(updatedControls);
   }
 
+  closeModal = () => {
+    
+  }
+
   triggerConfirmMsg = () => {
-    if (this.state.formIsValid) {
-      this.setState({
-        showConfirmMsg: true
-      })
-      setTimeout(() => { this.setState({ showConfirmMsg: false }); }, 3000);
-    }
+    const body = document.querySelector('body');
+    const darkOverlay = document.querySelector('.dark-overlay');
+    body.style.overflow = 'hidden';
+    darkOverlay.style.height = '100vh';
+    this.setState({
+      showConfirmMsg: true,
+      trySubmit: false
+    })
   }
 
   handleSubmit = event => {
     event.preventDefault();
+
+    const formIsValid = false
+
+    // Disable send button
+    this.setState({
+      formIsValid: formIsValid,
+      trySubmit: true,
+    });
+
     const data = {
       name: this.state.formControls.name.value,
       email: this.state.formControls.email.value,
@@ -220,34 +248,51 @@ class HireUsPage extends Component {
     newmessagesRef.set(data)
     console.log(data)
 
-    const updatedControls = {
-      ...this.state.formControls
+    const updatedValidControls = {
+        ...this.state.formControls
     };
 
-    const formIsValid = false
-
-    for (let inputIdentifier in updatedControls) {
-      updatedControls[inputIdentifier].value = '';
-      updatedControls[inputIdentifier].checked = false;
-      updatedControls[inputIdentifier].valid = false;
-      updatedControls[inputIdentifier].touched = false;
-    }
-
-    // Clear Form Input
-    this.setState({
-      formControls: updatedControls,
-      formIsValid: formIsValid,
-      trySubmit: true
-    });
-    this.triggerConfirmMsg()
+    setTimeout(() => { 
+      this.triggerConfirmMsg()
+      // Clear Form Input
+      for (let inputIdentifier in updatedValidControls) {
+        if (updatedValidControls[inputIdentifier].checkBtn) {
+          updatedValidControls[inputIdentifier].checked = false;
+        }
+        else {
+          updatedValidControls[inputIdentifier].value = '';
+          updatedValidControls[inputIdentifier].valid = false;
+          updatedValidControls[inputIdentifier].touched = false;
+        }
+      }
+      this.setState({
+        formControls: updatedValidControls,
+      });
+    }, 4000);
   }
 
   render() {
+    const modalContent = <p>
+        Your message has been recieved and we will be contacting you shortly to follow-up. 
+        If you would like to speak to someone immediately feel free to call.
+    </p>
+
+    const loader = (
+      <Loader
+          type="Puff"
+          color="#1d2d5f"
+          height={30}
+          width={30}
+        />
+    )
 
     return (
       <Layout location={this.props.location}>
         <SEO title="Hire Us For Your Software & Branding Solutions" />
-
+        <Modal 
+          show={this.state.showConfirmMsg} 
+          content={modalContent} 
+        />
         <section className="boxa-hire">
           <div className="container">
             <div className="intro">
@@ -396,9 +441,9 @@ class HireUsPage extends Component {
                   />
 
 
-                  <div className="form-group">
+                  <div className="form-group send-btn">
                       <input type="submit" name="send" id="send" disabled={!this.state.formIsValid} value="Send"/>
-                      {this.state.showConfirmMsg? (<p className="success">Thanks for your Message!</p>) : null}
+                      {this.state.trySubmit ? loader : null}
                   </div>
                 </form>
               </div>
