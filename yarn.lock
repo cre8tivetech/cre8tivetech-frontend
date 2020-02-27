@@ -5623,6 +5623,14 @@ gatsby-page-utils@^0.0.23:
     micromatch "^3.1.10"
     slash "^3.0.0"
 
+gatsby-plugin-google-gtag@^1.1.22:
+  version "1.1.22"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-gtag/-/gatsby-plugin-google-gtag-1.1.22.tgz#ff97c714c3d8d315256ac6c14b8478e8a11a04c4"
+  integrity sha512-kN/Wl3CqoVj9SWKWRsKzHGyP1BJYgNn1dJTxaDdmupFn2S+MDGGCpmfDJQbMmpN9BUv4PQG0KJrmVpeYa4bSpw==
+  dependencies:
+    "@babel/runtime" "^7.7.6"
+    minimatch "^3.0.4"
+
 gatsby-plugin-manifest@^2.2.20:
   version "2.2.20"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.2.20.tgz#67fa1d6335846097364c2eceece5a4bdc326706e"
