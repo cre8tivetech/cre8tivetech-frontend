@@ -60,7 +60,7 @@ module.exports = {
       options: {
         typeName: `WPGraphQL`,
         fieldName: `wpgraphql`,
-        url: `http://c8t-api.dukinfotech.com.ng/graphql`,
+        url: `https://c8t-api.dukinfotech.com.ng/graphql`,
         // refetchInterval: 60,
       },
     },
