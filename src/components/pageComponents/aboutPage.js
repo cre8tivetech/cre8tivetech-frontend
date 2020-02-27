@@ -78,7 +78,7 @@ class AboutPage extends Component {
           <div className="container">
             <div className="row intro">
               <div className="col-12 intro__text"> 
-              <h3 className="l1-txt2 p-b-80">About Us <i className="dot-box dot-box_yellow"></i></h3>           
+              <h3 className="l1-txt2 p-b-40">About Us <i className="dot-box dot-box_yellow"></i></h3>           
               <h4>AT Cre8tive Tech <i className="underline-box"></i></h4>
                 <p>We are focused on the provision of digital 
                   and IT solutions, aimed at driving the effective 
