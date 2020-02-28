@@ -54,6 +54,19 @@ export const query = graphql`
           }   
         }
       }
+      posts(first: 3) {
+        nodes {
+          title
+          content
+          uri
+          featuredImage{
+            sourceUrl
+          }
+          author {
+            name
+          }
+        }
+      }
     }
   }
 `

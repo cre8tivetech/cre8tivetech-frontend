@@ -396,7 +396,7 @@ class HireUsPage extends Component {
                         onChange={this.changeHandler} 
                         value="Branding"
                       />
-                      <label for="branding"> Branding & Identity (Logo, Id card, ...)</label>
+                      <label for="branding"> Branding & Identity</label>
                     </div>
                     <div className="">
                       <input 

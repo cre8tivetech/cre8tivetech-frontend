@@ -11,10 +11,11 @@ import uix from "../../assets/img/uix-icon.png";
 import marketing from "../../assets/img/marketing-icon.png";
 import image from "../../assets/img/home.jpg";
 import Type from "../Type";
-import InstagramFeed from "../InstagramFeed"
-import Layout from "../layout"
-import SEO from "../seo"
-import PageEntry from "./pageEntry"
+import InstagramFeed from "../InstagramFeed";
+import Layout from "../layout";
+import SEO from "../seo";
+import PageEntry from "./pageEntry";
+import BlogFeed from "./blogFeed";
 
 class Landing extends Component {
   state = {
@@ -39,7 +40,7 @@ class Landing extends Component {
 
     // Start instaFeed
     this.instaFeed()
-  }
+  } 
 
   instaFeed = () =>{
     axios.get(
@@ -209,11 +210,20 @@ class Landing extends Component {
 
               <div className="col-12">
                 <h3 className="l1-txt1 txt-center p-t-40 p-b-40">Our Stories <i className="dot-box dot-box_yellow"></i></h3>
-                <h4>What's happening... <i className="underline-box"></i></h4>
-                <p>Follow us on Instagram, Facebook, Linkedin and Medium for inside stories, latest projects, thoughts, and behind the scenes from the Cre8tive Tech media.</p>
               </div>
 
-              {loading? "Instagram Feed Loading..." : this.renderInstaFeed(instaFeed)}
+              <div className="blog">
+                {data &&
+                data.wpgraphql &&
+                data.wpgraphql.posts.nodes.map(post => (
+                  <div className="col-4 blog__box" key={post.id}>
+                    <BlogFeed post={post} />
+                  </div>
+                ))
+                }
+              </div>
+
+              {/* {loading? "Instagram Feed Loading..." : this.renderInstaFeed(instaFeed)} */}
               
             </div>
 

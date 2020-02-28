@@ -178,7 +178,7 @@ body {
 }
 
 .container {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
 }
 @media (min-width: 992px) {
@@ -198,7 +198,7 @@ body {
   left: 0;
   background: url("../assets/img/bg.png");
   background-color: rgb(255, 255, 255);
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0;
   z-index: 100;
   transition: all .2s ease-in-out;
   -webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.35);
@@ -704,10 +704,14 @@ body {
   margin-top: 50px;
   font-family: Montserrat-Alternates-Regular;
 }
+
 .blog__box:hover .blog__box-title {
   color: #e22b2b;
 }
 
+.blog__box a {
+  text-decoration: none;
+}
 
 
 .blog__box svg {
@@ -729,12 +733,26 @@ body {
 
 .blog__box-meta { 
   color: #1d2d5f;
-  padding: 15px 0;
+  padding-top: 15px;
   font-size: .9rem;
 }
 .blog__box-meta .author {
   color: var(--secondary-color);
   text-transform: capitalize;
+}
+
+.blog__box-title {
+  color: #1d2d5f;
+  /* padding: 5px 0; */
+  font-size: 1.2rem;
+  /* font-weight: bold; */
+}
+
+.blog__box-content {
+  font-family: Montserrat-Alternates-Regular;
+  color: #1d2d5f;
+  padding: 10px 0 5px 0;
+  font-size: .9rem;
 }
 
 .box-404 {
@@ -792,22 +810,6 @@ body {
   margin: 30px 0;
   font-family: 'Ubuntu';
   overflow: auto;
-}
-
-
-
-.blog__box-title {
-  color: #1d2d5f;
-  padding: 5px 0;
-  font-size: 1.2rem;
-  /* font-weight: bold; */
-}
-
-.blog__box-content {
-  font-family: Montserrat-Alternates-Regular;
-  color: #1d2d5f;
-  padding: 5px 0;
-  font-size: .9rem;
 }
 
 .boxe {
@@ -911,9 +913,9 @@ body {
   padding: 5px 0;
 }
 
-.sub-footer_box a {
+.sub-footer_box a, .sub-footer_box p {
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .sub-footer_links {
@@ -946,8 +948,8 @@ body {
   color: #fff;
   /* margin-top: 150px; */
   /* margin-bottom: -150px; */
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   height: auto;
   width: 100%;
   position: relative;
@@ -962,15 +964,15 @@ body {
 }
 
 .boxg h4 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   line-height: 1.3;
   font-weight: 600;
   padding-bottom: 10px;
 }
-.boxg p {
+/* .boxg p {
   font-size: 1.2rem;
   font-weight: 300;
-}
+} */
 
 .map {
   border-radius: 4px;
@@ -1180,7 +1182,7 @@ body {
   font-family: Montserrat-Alternates-Regular;
   /* padding-top: 100px; */
   height: auto;
-  padding-bottom: 200px;
+  padding-bottom: 100px;
   width: 100%;
   /* background: url("http://api.thumbr.it/whitenoise-361x370.png?background=ffffff00&noise=626262&density=7&opacity=21"); */
   background-color: rgb(255, 255, 255);
@@ -1189,7 +1191,7 @@ body {
   justify-content: center;
   line-height: 1.8;
 }
-.insta h4 {
+/* .insta h4 {
   font-size: 1.3rem;
   line-height: 1.3;
   font-weight: 600;
@@ -1198,7 +1200,7 @@ body {
 .insta p {
   font-size: 1.2rem;
   font-weight: 300;
-}
+} */
 
 .insta-feed {
   position: relative;
@@ -1439,7 +1441,7 @@ body {
 }
 
 .request-form {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 .request-form select{
