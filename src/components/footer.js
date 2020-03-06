@@ -1,10 +1,213 @@
 import React, { Component, Fragment } from "react";
 import { Link } from 'gatsby';
+import Loader from 'react-loader-spinner'
+
+import validate from "../components/validator";
+import getFirebase from "../components/firebase";
+import Modal from "./pageComponents/modal";
 
 class Footer extends Component {
+  state = {
+    database: null,
+    newslettersRef: null,
+    trySubmit: false,
+
+    formIsValid: false,
+
+    showConfirmMsg: false,
+
+    formControls: {
+      email: {
+        value: '',
+        placeholder: "your@email.com",
+        valid: false,
+        touched: false,
+        validationRules: {
+          minLength: 4,
+          isEmail: true,
+          isRequired: true
+        }
+      },
+      // name: {
+      //   value: '',
+      //   placeholder: "Enter Your Name",
+      //   valid: false,
+      //   touched: false,
+      //   validationRules: {
+      //     minLength: 3,
+      //     isRequired: true
+      //   }
+      // },
+    } 
+  }
+
+  componentDidMount() {
+    const lazyApp = import('@firebase/app')
+    const lazyDatabase = import('@firebase/database')
+
+    Promise.all([lazyApp, lazyDatabase]).then(([firebase]) => {
+      const database = getFirebase(firebase).database()
+      
+      //Reference messeges collection
+      const newslettersRef = getFirebase(firebase).database().ref('newsletter');
+
+      this.setState({
+        database,
+        newslettersRef
+      })
+    })
+  }
+
+  changeHandler = event => {
+    const name = event.target.name;
+    const value = event.target.value;
+  
+    const updatedControls = {
+      ...this.state.formControls
+    };
+    const updatedFormElement = {
+      ...updatedControls[name]
+    };
+    updatedFormElement.value = value;
+    updatedFormElement.touched = true;
+    
+    updatedFormElement.valid = validate(value, updatedFormElement.validationRules);
+
+    updatedControls[name] = updatedFormElement;
+
+    let formIsValid = true;
+
+    for (let inputIdentifier in updatedControls) {
+      formIsValid = updatedControls[inputIdentifier].valid && formIsValid;
+    }
+    
+    this.setState({
+      formControls: updatedControls,
+      formIsValid: formIsValid,
+      // showConfirmMsg: false
+    });    
+  }
+
+  triggerConfirmMsg = () => {
+    const body = document.querySelector('body');
+    const darkOverlay = document.querySelector('.dark-overlay');
+    body.style.overflow = 'hidden';
+    darkOverlay.style.height = '100vh';
+    this.setState({
+      showConfirmMsg: true,
+      trySubmit: false
+    })
+  }
+
+  handleSubmit = event => {
+    event.preventDefault();
+
+    const formIsValid = false
+
+    // Disable send button
+    this.setState({
+      formIsValid: formIsValid,
+      trySubmit: true,
+    });
+
+    const data = {
+      // name: this.state.formControls.name.value,
+      email: this.state.formControls.email.value,
+    }
+
+    // Sending Message to Firebase
+    let newNewslettersRef = this.state.newslettersRef.push();
+    newNewslettersRef.set(data)
+    console.log(data)
+
+    const updatedValidControls = {
+        ...this.state.formControls
+    };
+
+    setTimeout(() => { 
+      this.triggerConfirmMsg()
+      // Clear Form Input
+      for (let inputIdentifier in updatedValidControls) {
+        updatedValidControls[inputIdentifier].value = '';
+        updatedValidControls[inputIdentifier].valid = false;
+        updatedValidControls[inputIdentifier].touched = false;
+      }
+      this.setState({
+        formControls: updatedValidControls,
+      });
+    }, 3000);
+  }
+
+  closeModal = () => {
+    const body = document.querySelector('body');
+    const darkOverlay = document.querySelector('.dark-overlay');
+    if (darkOverlay) {
+      body.style.overflow = 'auto';
+      darkOverlay.style.height = '0'
+      this.setState({
+        showConfirmMsg: false,
+      })
+    }
+  }
+
   render() {
+    const modalContent = <p>
+        Your subscription has been successfully confirmed. 
+        If you would like to speak to someone immediately feel free to call.
+    </p>
+    const loader = (
+      <Loader
+          type="Puff"
+          color="#1d2d5f"
+          height={30}
+          width={30}
+        />
+    )
     return (
       <Fragment>
+        <Modal
+          closeModal={this.closeModal}
+          show={this.state.showConfirmMsg} 
+          content={modalContent} 
+        />
+
+        <section className="subscribe_box">
+          <div className="container">
+            <div className="row">
+
+              <div className="col-12 subscribe">
+                <div className="email-img"></div>
+                <div className="email-subscribe">
+                  <h3 className="sub-big sub-bold">SUBSCRIBE TO OUR NEWSLETTER <i class="dot-box dot-box_blue"></i></h3><br/> 
+                  <p>Be the first to know 
+                    about the latest posts, updates and 
+                    exclusive promotions from us. No spam, we guarantee!
+                  </p>
+                  <form autocomplete="off" onSubmit={this.handleSubmit}>
+                    <div className="form-group">
+                      <label htmlFor="email"><i className="zmdi zmdi-email"></i></label>
+                      <input 
+                        type="email" 
+                        name="email"
+                        value={this.state.formControls.email.value}
+                        placeholder={this.state.formControls.email.placeholder}
+                        onChange={this.changeHandler}
+                        touched={this.state.formControls.email.touched}
+                        valid={this.state.formControls.email.valid}
+                      />
+                    </div>
+                    <div className="form-group subscribe-btn">
+                      <input name="btn" type="submit" disabled={!this.state.formIsValid} value="SUBSCRIBE"></input>
+                      {this.state.trySubmit ? loader : null}
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
         
         <section id="contact" className="boxg">
           <div className="container boxg__content">
