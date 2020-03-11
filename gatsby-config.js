@@ -56,6 +56,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-tawk`,
+      options: {
+        tawkId: "5e692ec08d24fc2265871442",
+      },
+    },
+    {
       resolve: `gatsby-source-graphql`,
       options: {
         typeName: `WPGraphQL`,
