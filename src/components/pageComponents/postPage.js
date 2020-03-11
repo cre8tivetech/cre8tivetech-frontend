@@ -1,4 +1,5 @@
 import React, { Fragment, Component } from "react"
+import { Link } from "gatsby";
 
 import Layout from "../layout"
 import SEO from "../seo"
@@ -66,6 +67,11 @@ class PostPage extends Component {
                     ? renderTerms(post.categories.nodes, post.tags.nodes)
                     : null}
                   </div>
+              </div>
+              <div className="pagination">
+                <div className="pagination_left">
+                  <Link className="red-underline-from-left" to="work"><i className="zmdi zmdi-long-arrow-left"></i> Back To Blog Page</Link>
+                </div>
               </div>
 
             </div>

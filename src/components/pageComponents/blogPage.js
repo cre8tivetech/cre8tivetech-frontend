@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { navigate, Link } from "gatsby"
+import { Link } from "gatsby"
 import PostEntry from "../pageComponents/postEntry"
 import Layout from "../layout"
 import SEO from "../seo"
@@ -17,12 +17,14 @@ class BlogPage extends Component {
     } else if (1 === pageNumber) {
       previousLink = `/`
     } else if (1 < pageNumber) {
-      previousLink = `/page/${pageNumber - 1}`
+      previousLink = `/blog/${pageNumber - 1}`
     }
 
     return (
-      <div onClick={() => navigate(previousLink)}>
-        Previous Posts
+      <div
+        className="pagination_left" 
+      >
+        <Link className="red-underline-from-left" to={previousLink}><i className="zmdi zmdi-long-arrow-left"></i> Previous Page</Link>
       </div>
     )
   }
@@ -35,9 +37,9 @@ class BlogPage extends Component {
     if (hasNextPage) {
       return (
         <div
-          onClick={() => navigate(`/page/${pageNumber + 1}`)}
+          className="pagination_right"
         >
-          Next Posts
+          <Link className="red-underline-from-left" to={`/blog/${pageNumber + 1}`}>>Next Page <i className="zmdi zmdi-long-arrow-right"></i></Link>
         </div>
       )
     } else {
@@ -98,6 +100,10 @@ class BlogPage extends Component {
               </div>
             ))
             }
+            </div>
+            <div className="pagination">
+              {this.renderPreviousLink()}
+              {this.renderNextLink()}
             </div>
 
           </div>

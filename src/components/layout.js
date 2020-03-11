@@ -7,7 +7,6 @@ import Footer from "./footer";
 import "./layout.css"
 
 const Layout = (props) => {
-  console.log('children: ', props);
   return (
       <div>
         <Header path={props.location} />

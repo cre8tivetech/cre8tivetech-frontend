@@ -680,6 +680,25 @@ body {
   font-family: Montserrat-Alternates-Medium;
 }
 
+.pagination {
+  /* border: 1px solid #1d2d5f; */
+  padding-top: 20px;
+  color: var(--secondary-color);
+  font-family: Montserrat-Alternates-Regular;
+}
+
+.pagination a {
+  text-decoration: none;
+}
+
+.pagination_left {
+  float: left;
+}
+
+.pagination_right {
+  float: right;
+}
+
 .blog {
   height: auto;
   width: 100%;
@@ -1241,8 +1260,7 @@ body {
   z-index: 1;
   transition: all .2s ease-in-out;
 }
-.insta-feed img:hover {
-  z-index: 2;
+.insta-feed:hover {
   transform: scale(.96);
 } 
 .carousel {
@@ -1250,13 +1268,13 @@ body {
   position: absolute;
   font-size: 2rem !important;
   right: 20px;
-  color: #ffbb458e;
-  -moz-transform: scaleX(-1);
+  color: rgb(182, 179, 179);
+  /* -moz-transform: scaleX(-1);
   -o-transform: scaleX(-1);
   -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  filter: FlipH;
-  -ms-filter: "FlipH";
+  transform: scaleX(-1); */
+  /* filter: FlipH;
+  -ms-filter: "FlipH"; */
   z-index: 2;
 }
 /* Flashing */

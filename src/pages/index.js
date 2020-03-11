@@ -27,7 +27,6 @@ const LoadableComponent = MyLoadable({
 class Home extends Component {
   render() {
     const { data } = this.props
-    console.log(data);
     if (data.wpgraphql) {
       return <LoadableComponent data={data}/>;
     }

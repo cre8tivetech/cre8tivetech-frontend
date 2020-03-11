@@ -178,12 +178,12 @@ class Footer extends Component {
               <div className="col-12 subscribe">
                 <div className="email-img"></div>
                 <div className="email-subscribe">
-                  <h3 className="sub-big sub-bold">SUBSCRIBE TO OUR NEWSLETTER <i class="dot-box dot-box_blue"></i></h3><br/> 
+                  <h3 className="sub-big sub-bold">SUBSCRIBE TO OUR NEWSLETTER <i className="dot-box dot-box_blue"></i></h3><br/> 
                   <p>Be the first to know 
                     about the latest posts, updates and 
                     exclusive promotions from us. No spam, we guarantee!
                   </p>
-                  <form autocomplete="off" onSubmit={this.handleSubmit}>
+                  <form autoComplete="off" onSubmit={this.handleSubmit}>
                     <div className="form-group">
                       <label htmlFor="email"><i className="zmdi zmdi-email"></i></label>
                       <input 
@@ -192,8 +192,8 @@ class Footer extends Component {
                         value={this.state.formControls.email.value}
                         placeholder={this.state.formControls.email.placeholder}
                         onChange={this.changeHandler}
-                        touched={this.state.formControls.email.touched}
-                        valid={this.state.formControls.email.valid}
+                        touched={toString(this.state.formControls.email.touched)}
+                        valid={toString(this.state.formControls.email.valid)}
                       />
                     </div>
                     <div className="form-group subscribe-btn">
