@@ -3,10 +3,12 @@ module.exports = {
     title: `Cre8tive Tech`,
     description: `Cre8tive Tech is a software and digital agency that fosters synergy between creativity and technology. We are specialized in user interface and experience design, web development, branding identity, mobile app and digital marketing.`,
     author: `@cre8tive_tech`,
-    site_image: `https://pbs.twimg.com/profile_images/1081525414252724224/SMtYS3yG_400x400.jpg`
+    site_image: `https://pbs.twimg.com/profile_images/1081525414252724224/SMtYS3yG_400x400.jpg`,
+    siteUrl: `https://www.cre8tivetech.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
