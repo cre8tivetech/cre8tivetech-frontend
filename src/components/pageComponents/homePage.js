@@ -11,13 +11,15 @@ import uix from "../../assets/img/uix-icon.png";
 import marketing from "../../assets/img/marketing-icon.png";
 import image from "../../assets/img/home.jpg";
 import Type from "../Type";
-import InstagramFeed from "../InstagramFeed"
-import Layout from "../layout"
-import SEO from "../seo"
-import PageEntry from "./pageEntry"
+import InstagramFeed from "../InstagramFeed";
+import Layout from "../layout";
+import SEO from "../seo";
+import PageEntry from "./pageEntry";
+import BlogFeed from "./blogFeed";
 
 class Landing extends Component {
   state = {
+    username: "cre8tive_tech",
     instaFeed: null,
     loading: true
   }
@@ -39,27 +41,28 @@ class Landing extends Component {
 
     // Start instaFeed
     this.instaFeed()
-  }
+  } 
 
   instaFeed = () =>{
+    
     axios.get(
-      `https://api.instagram.com/v1/users/self/media/recent/?access_token=${process.env.GATSBY_INSTAGRAM_ACCESS_TOKEN}&count=8`
+      `https://www.instagram.com/${this.state.username}/?__a=1`
     )
       .then(res => {
         const size = 8
         this.setState({
-          instaFeed: res.data.data.slice(0, size),
+          instaFeed: res.data.graphql.user.edge_owner_to_timeline_media.edges.slice(0, size),
           loading: false
         });
+        console.log(this.state.instaFeed)
       }).catch(err => console.log(err))
   }
 
   renderInstaFeed = feed => {
-    // if(!this.state.loading)console.log("instaFeed: ",feed.map(c => c.link))
     return (
       feed.map(c => {
         return (
-          <InstagramFeed image={c.images.standard_resolution.url} type={c.type} link={c.link} />
+          <InstagramFeed image={c.node.thumbnail_src} type={c.node.__typename} link={`https://www.instagram.com/p/${c.node.shortcode}/`} />
         )
       })
     )
@@ -209,12 +212,32 @@ class Landing extends Component {
 
               <div className="col-12">
                 <h3 className="l1-txt1 txt-center p-t-40 p-b-40">Our Stories <i className="dot-box dot-box_yellow"></i></h3>
-                <h4>What's happening... <i className="underline-box"></i></h4>
-                <p>Follow us on Instagram, Facebook, Linkedin and Medium for inside stories, latest projects, thoughts, and behind the scenes from the Cre8tive Tech media.</p>
+              </div>
+              {loading? "Instagram Feed Loading..." : this.renderInstaFeed(instaFeed)}              
+            </div>
+
+          </div>
+        </section>
+
+        <section id="news" className="insta">
+          <div className="container">
+
+            <div className="row">
+
+              <div className="col-12">
+                <h3 className="l1-txt1 txt-center p-t-40 p-b-40">Latest News <i className="dot-box dot-box_yellow"></i></h3>
               </div>
 
-              {loading? "Instagram Feed Loading..." : this.renderInstaFeed(instaFeed)}
-              
+              <div className="blog">
+                {data &&
+                data.wpgraphql &&
+                data.wpgraphql.posts.nodes.map(post => (
+                  <div className="col-4 blog__box" key={post.uri}>
+                    <BlogFeed post={post} />
+                  </div>
+                ))
+                }
+              </div>              
             </div>
 
           </div>

@@ -5,7 +5,7 @@ import image from '../../assets/img/sent.png';
 
 class Modal extends Component {
   state = {
-    showModal: true
+    showModal: false
   }
 
   componentWillReceiveProps(nextProps) {
@@ -16,21 +16,11 @@ class Modal extends Component {
     }
   }
 
-  closeModal = () => {
-    const body = document.querySelector('body');
-    const darkOverlay = document.querySelector('.dark-overlay');
-    body.style.overflow = 'auto';
-    darkOverlay.style.height = '0'
-    this.setState({
-      showModal: false
-    })
-  }
-
   render () {
     const modal = (
       <Fragment>
         <div className="modal-box">
-          <i onClick={this.closeModal} className="zmdi zmdi-close modal-close"></i>
+          <i onClick={this.props.closeModal} className="zmdi zmdi-close modal-close"></i>
           <img className="lazyload" data-src={image} alt="sent" />
           <h2>THANK YOU.</h2>
           {this.props.content}
@@ -76,7 +66,9 @@ class Modal extends Component {
         </div>
       </Fragment>
     )
-    return this.props.show && this.state.showModal ? modal : null
+    console.log('show: ',this.props.show);
+    console.log('showModel: ',this.state.showModal)
+    return this.props.show ? modal : null
   }
 }
 

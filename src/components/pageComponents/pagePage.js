@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby";
 import Layout from "../layout";
 import SEO from "../seo";
 import placeHolderImage from '../../assets/img/job.jpg'
@@ -42,6 +43,11 @@ const PagePage = props => {
               <div className="col-12 single-post_content">
                 <div dangerouslySetInnerHTML={{ __html: content }} />
               </div>
+          </div>
+          <div className="pagination">
+            <div className="pagination_left">
+              <Link className="red-underline-from-left" to="work"><i className="zmdi zmdi-long-arrow-left"></i> Back To Work Page</Link>
+            </div>
           </div>
 
         </div>

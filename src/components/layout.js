@@ -6,12 +6,12 @@ import Header from "./header"
 import Footer from "./footer";
 import "./layout.css"
 
-const Layout = ({ children, location }) => {
+const Layout = (props) => {
   return (
       <div>
-        <Header path={location} />
+        <Header path={props.location} />
         <div className="dark-overlay" />
-          {children}
+        {props.children}
         <Footer />
       </div>
   )

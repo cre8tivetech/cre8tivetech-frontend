@@ -27,7 +27,6 @@ const LoadableComponent = MyLoadable({
 class Home extends Component {
   render() {
     const { data } = this.props
-    console.log(data);
     if (data.wpgraphql) {
       return <LoadableComponent data={data}/>;
     }
@@ -52,6 +51,19 @@ export const query = graphql`
             tags
             description
           }   
+        }
+      }
+      posts(first: 3) {
+        nodes {
+          title
+          content
+          uri
+          featuredImage{
+            sourceUrl
+          }
+          author {
+            name
+          }
         }
       }
     }

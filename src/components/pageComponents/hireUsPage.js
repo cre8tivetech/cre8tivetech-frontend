@@ -194,14 +194,10 @@ class HireUsPage extends Component {
     this.setState({
       formControls: updatedControls,
       formIsValid: formIsValid,
-      showConfirmMsg: false
+      // showConfirmMsg: false
     });
     
     // console.log(updatedControls);
-  }
-
-  closeModal = () => {
-    
   }
 
   triggerConfirmMsg = () => {
@@ -268,7 +264,19 @@ class HireUsPage extends Component {
       this.setState({
         formControls: updatedValidControls,
       });
-    }, 4000);
+    }, 3000);
+  }
+
+  closeModal = () => {
+    const body = document.querySelector('body');
+    const darkOverlay = document.querySelector('.dark-overlay');
+    if (darkOverlay) {
+      body.style.overflow = 'auto';
+      darkOverlay.style.height = '0'
+      this.setState({
+        showConfirmMsg: false,
+      })
+    }
   }
 
   render() {
@@ -289,7 +297,8 @@ class HireUsPage extends Component {
     return (
       <Layout location={this.props.location}>
         <SEO title="Hire Us For Your Software & Branding Solutions" />
-        <Modal 
+        <Modal
+          closeModal={this.closeModal} 
           show={this.state.showConfirmMsg} 
           content={modalContent} 
         />
@@ -396,7 +405,7 @@ class HireUsPage extends Component {
                         onChange={this.changeHandler} 
                         value="Branding"
                       />
-                      <label for="branding"> Branding & Identity (Logo, Id card, ...)</label>
+                      <label for="branding"> Branding & Identity</label>
                     </div>
                     <div className="">
                       <input 
