@@ -54,7 +54,6 @@ class Landing extends Component {
           instaFeed: res.data.graphql.user.edge_owner_to_timeline_media.edges.slice(0, size),
           loading: false
         });
-        console.log(this.state.instaFeed)
       }).catch(err => console.log(err))
   }
 
