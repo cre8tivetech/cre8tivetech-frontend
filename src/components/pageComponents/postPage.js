@@ -36,6 +36,7 @@ class PostPage extends Component {
     const image = post.featuredImage? post.featuredImage.sourceUrl : placeHolderImage
     const mystyle = {
       background: `linear-gradient(180deg, rgba(29,45,95,0.8) 10%, rgba(64,206,227,0.8) 90%), url(${image})`,
+      // backgroundColor: `var(--primary-color-trans)`,
       backgroundPosition: 'center, center top',
       backgroundSize: 'cover, cover',
       minHeight: '70vh',

@@ -45,11 +45,12 @@ class AboutPage extends Component {
 
   render() {
     const mystyle = {
-      background: `linear-gradient(180deg, rgba(29,45,95,0.8) 10%, rgba(64,206,227,0.8) 90%), url(${image})`,
+      // background: `linear-gradient(180deg, rgba(29,45,95,0.8) 10%, rgba(64,206,227,0.8) 90%), url(${image})`,
+      backgroundColor: `var(--primary-color)`,
       backgroundPosition: 'center, center',
       backgroundSize: 'cover, cover',
       backgroundRepeat: 'no-repeat',
-      minHeight: '70vh',
+      // minHeight: '70vh',
     };
     return (
         <Layout location={this.props.location}>

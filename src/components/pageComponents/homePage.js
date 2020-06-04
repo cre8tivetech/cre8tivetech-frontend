@@ -74,7 +74,8 @@ class Landing extends Component {
     const { data } = this.props
 
     const mystyle = {
-      background: `linear-gradient(180deg, rgba(29,45,95,0.8) 10%, rgba(64,206,227,0.8) 90%), url(${image})`,
+      // background: `linear-gradient(180deg, rgba(29,45,95,0.8) 10%, rgba(64,206,227,0.8) 90%), url(${image})`,
+      background: `var(--primary-color)`,
       backgroundPosition: 'center, center top',
       backgroundSize: 'cover, cover',
       backgroundRepeat: 'no-repeat',
@@ -100,7 +101,7 @@ class Landing extends Component {
               </div>
               <div className="col-6 intro__adv">
                 <div className="intro__adv-img">
-                  <img className="lazyload" data-src={mac} alt="" />
+                  <img lazy className="lazyload" data-src={mac} alt="" />
                   <div className="intro__adv-head" />
                   <p className="intro__adv-text">
                     WE CAN HELP<br/> YOU WITH <br /> YOUR
@@ -158,7 +159,7 @@ class Landing extends Component {
         <section className="boxc boxc_red-bg">
           <div className="container">
 
-          <h3 className="l1-txt1 txt-center p-t-80 p-b-80">Our Work <i className="dot-box dot-box_blue"></i></h3>
+          <h3 className="l1-txt1 txt-center p-t-80 p-b-80">Our Work <i className="dot-box dot-box_yellow"></i></h3>
           <div className="row">
             {data &&
             data.wpgraphql &&
