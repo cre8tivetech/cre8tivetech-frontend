@@ -4,6 +4,7 @@ import uche from "../../assets/img/uche.png";
 import gyft from "../../assets/img/gyft.png";
 import josh from "../../assets/img/josh.png";
 import presh from "../../assets/img/presh.png";
+import blackpen from "../../assets/img/blackpen.jpg";
 import codeene from "../../assets/img/codeene.png";
 import ablegenius from "../../assets/img/ablegenius.png";
 import restable from "../../assets/img/restable.png";
@@ -109,7 +110,7 @@ class AboutPage extends Component {
                   </div>
                   <div className="team-details">
                     <h3>Nwakwuo Uche K.</h3>
-                    <p>CEO</p>
+                    <p>CEO / Software Engineer</p>
                   </div>
                 </div>
 
@@ -119,7 +120,7 @@ class AboutPage extends Component {
                   </div>
                   <div className="team-details">
                     <h3>Ndu Delight C.K.</h3>
-                    <p>COO</p>
+                    <p>COO / Creative Director</p>
                   </div>
                 </div>
 
@@ -129,7 +130,7 @@ class AboutPage extends Component {
                   </div>
                   <div className="team-details">
                     <h3>Nwakwuo Joshua E.</h3>
-                    <p>CTO</p>
+                    <p>CTO / Software Engineer</p>
                   </div>
                 </div>
 
@@ -140,6 +141,16 @@ class AboutPage extends Component {
                   <div className="team-details">
                     <h3>Balogun Precious O.</h3>
                     <p>Snr. Marketing Manager</p>
+                  </div>
+                </div>
+
+                <div class="col-3 team-feed">
+                  <div className="team-image">
+                    <img className="lazyload" data-src={blackpen} alt=""/>
+                  </div>
+                  <div className="team-details">
+                    <h3>Oludamola Oni</h3>
+                    <p>Snr. Content Writer</p>
                   </div>
                 </div>
 
