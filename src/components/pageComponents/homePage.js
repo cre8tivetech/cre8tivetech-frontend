@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Link } from "gatsby";
 import axios from "axios";
 
-import { getHeaders, defaultHeaders } from '../../../config';
 import mac from "../../assets/img/mac.png";
 import web from "../../assets/img/web-icon.png";
 import mobile from "../../assets/img/mobile-icon.png";
@@ -45,19 +44,20 @@ class Landing extends Component {
   } 
 
   instaFeed = () =>{
-    const headers = getHeaders(defaultHeaders, process.env.GATSBY_REACT_APP_INSTAGRAM_SESSION_ID, process.env.GATSBY_REACT_APP_INSTAGRAM_USER_ID)
+    const headers = {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + process.env.GATSBY_REACT_APP_WAVEDOWNLOADER_INSTAGRAM_KEY,
+    };
     axios.get(
-      `https://www.instagram.com/${process.env.GATSBY_REACT_APP_INSTAGRAM_USERNAME}/?__a=1`,
+      `https://wavedownloader.herokuapp.com/api/v1/instagram/username?username=${process.env.GATSBY_REACT_APP_INSTAGRAM_USERNAME}&&limit=8`,
       { headers }
     )
       .then(res => {
-        console.log(res.data.graphql)
         const size = 8
         this.setState({
-          instaFeed: res.data.graphql.user.edge_owner_to_timeline_media.edges.slice(0, size),
+          instaFeed: res.data.post.slice(0, size),
           loading: false
         });
-        console.log(this.state.instaFeed)
       }).catch(err => console.log(err))
   }
 
@@ -65,7 +65,7 @@ class Landing extends Component {
     return (
       feed.map(c => {
         return (
-          <InstagramFeed image={c.node.thumbnail_src} type={c.node.__typename} link={`https://www.instagram.com/p/${c.node.shortcode}/`} />
+          <InstagramFeed image={c.display_url} type={c.__typename} link={`https://www.instagram.com/p/${c.shortcode}/`} />
         )
       })
     )

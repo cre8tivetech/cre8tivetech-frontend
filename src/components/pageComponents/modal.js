@@ -66,8 +66,6 @@ class Modal extends Component {
         </div>
       </Fragment>
     )
-    console.log('show: ',this.props.show);
-    console.log('showModel: ',this.state.showModal)
     return this.props.show ? modal : null
   }
 }
