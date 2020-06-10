@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "gatsby";
 import axios from "axios";
 
+import { getHeaders, defaultHeaders } from '../../../config';
 import mac from "../../assets/img/mac.png";
 import web from "../../assets/img/web-icon.png";
 import mobile from "../../assets/img/mobile-icon.png";
@@ -44,11 +45,13 @@ class Landing extends Component {
   } 
 
   instaFeed = () =>{
-    
+    const headers = getHeaders(defaultHeaders, process.env.GATSBY_REACT_APP_INSTAGRAM_SESSION_ID, process.env.GATSBY_REACT_APP_INSTAGRAM_USER_ID)
     axios.get(
-      `https://www.instagram.com/${this.state.username}/?__a=1`
+      `https://www.instagram.com/${process.env.GATSBY_REACT_APP_INSTAGRAM_USERNAME}/?__a=1`,
+      { headers }
     )
       .then(res => {
+        console.log(res.data.graphql)
         const size = 8
         this.setState({
           instaFeed: res.data.graphql.user.edge_owner_to_timeline_media.edges.slice(0, size),
