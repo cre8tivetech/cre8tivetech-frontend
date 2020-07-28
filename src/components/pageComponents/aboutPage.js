@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-import uche from "../../assets/img/uche.png";
-import gyft from "../../assets/img/gyft.png";
-import josh from "../../assets/img/josh.png";
-import presh from "../../assets/img/presh.png";
+import uche from "../../assets/img/uche.jpg";
+import gyft from "../../assets/img/gyft.jpg";
+import josh from "../../assets/img/josh.jpg";
+import presh from "../../assets/img/presh.jpg";
 import blackpen from "../../assets/img/blackpen.jpg";
 import codeene from "../../assets/img/codeene.png";
 import ablegenius from "../../assets/img/ablegenius.png";

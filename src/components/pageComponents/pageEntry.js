@@ -3,16 +3,17 @@ import { Link, graphql } from "gatsby"
 import ablegeniusPortfolio from "../../assets/img/ablegenius-portfolio.png";
 
 
-const PageEntry = ({ page }) => {
+const PageEntry = ({ page }) => { 
+  console.log(page.projects.link)
   return (
     <Fragment>
-      <Link to={`/work/${page.uri}`}>
+      <a target="_blank" href={page.projects.link}>
         <img className="lazyload" data-src={page.featuredImage? page.featuredImage.sourceUrl : ablegeniusPortfolio} alt=""/>
         <div className="project__box-title">
           <h3>{page.title}</h3>
           <p>{page.projects.tags}</p>
         </div>
-      </Link>
+      </a>
     </Fragment>
   )
 }
@@ -30,6 +31,7 @@ export const query = graphql`
     }
     projects{
       tags
+      link
     }   
   }
 `

@@ -65,20 +65,20 @@ module.exports = async ({ actions, graphql }) => {
     })
 
   await fetchPages({ first: 12, after: null }).then(allPages => {
-    const pageTemplate = path.resolve(`./src/templates/page.js`)
+    // const pageTemplate = path.resolve(`./src/templates/page.js`)
 
     workPages.map(workPage => {
       console.log(`createWorkPage ${workPage.context.pageNumber}`)
       createPage(workPage)
     })
 
-    allPages.map(page => {
-      console.log(`create page: ${page.uri}`)
-      createPage({
-        path: `/work/${page.uri}`,
-        component: pageTemplate,
-        context: page,
-      })
-    })
+    // allPages.map(page => {
+    //   console.log(`create page: ${page.uri}`)
+    //   createPage({
+    //     path: `/work/${page.uri}`,
+    //     component: pageTemplate,
+    //     context: page,
+    //   })
+    // })
   })
 }
