@@ -41,6 +41,8 @@
   --secondary-color: #e22b2b;
   --yellow-color: #ffbc45;
   --primary-font: Montserrat-Alternates-Regular, sans-serif;
+  --scrollbarBG: rgb(238, 234, 234);
+  --thumbBG: #1d2d5f;
 }
 
 * {
@@ -57,12 +59,27 @@ em {
   display: inline-block;
 }
 
+body::-webkit-scrollbar {
+  width: 15px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG) ;
+  border-radius: 10px;
+  border: 3px solid var(--scrollbarBG);
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   margin: 0 auto;
   padding: 0;
   background-color: rgb(255, 255, 255);
   background-image: url("../assets/img/bg.png");
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
 }
 
 .dark-overlay {
@@ -605,9 +622,15 @@ body {
   width: 100px;
   height: auto;
   margin-bottom: 20px;
-  -webkit-box-shadow: 1px 2px 5px 0px rgba(226, 43, 43,0.7);
+  /* -webkit-box-shadow: 1px 2px 5px 0px rgba(226, 43, 43,0.7);
   -moz-box-shadow: 1px 2px 5px 0px rgba(226, 43, 43,0.7);
-  box-shadow: 1px 2px 5px 0px rgba(226, 43, 43,0.7);
+  box-shadow: 1px 2px 5px 0px rgba(226, 43, 43,0.7); */
+}
+
+.services__box img:hover {
+  -webkit-box-shadow: 1px 2px 5px 0px rgba(29,46,95, 0.7);
+  -moz-box-shadow: 1px 2px 5px 0px rgba(29,46,95, 0.7);
+  box-shadow: 1px 2px 5px 0px rgba(29,46,95, 0.7);
 }
 
 .services__box h2 {
@@ -828,7 +851,8 @@ body {
   padding-top: 20px;
 }
 .single-post_content blockquote {
-  border-left: 5px solid #e22b2b;
+  border-left: 5px solid var(--primary-color);
+  background-color: #F5F5F5;
   padding-left: 20px;
   margin: 30px 0;
   font-family: Montserrat-Alternates-Medium;
@@ -836,12 +860,38 @@ body {
 }
 
 .single-post_content pre {
-  border-left: 5px solid #ccc;
-  background-color: #F5F5F5;
+  border-radius: 10px;
+  color: #fff;
+  background-color: #001628;
   padding: 20px;
   margin: 30px 0;
   font-family: 'Ubuntu';
+  font-size: 1.1rem;
   overflow: auto;
+  max-height: 500px;
+}
+pre::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+
+pre::-webkit-scrollbar-track {
+  background: transparent;
+}
+pre::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 6px;
+  border: 3px solid #001628;
+  width: 8px;
+  height: 8px;
+  display: none;
+}
+pre:hover::-webkit-scrollbar-thumb {
+  display: block;
+}
+pre::-webkit-scrollbar-corner {
+  background-color: #001628;
+  border-radius: 20px;
 }
 
 .blocks-gallery-grid{
@@ -1056,6 +1106,11 @@ body {
   -webkit-box-shadow: 1px 2px 5px 0px rgba(226, 43, 43,0.7);
   -moz-box-shadow: 1px 2px 5px 0px rgba(226, 43, 43,0.7);
   box-shadow: 1px 2px 5px 0px rgba(226, 43, 43,0.7);
+}
+.subscribe:hover {
+  -webkit-box-shadow: 1px 2px 5px 0px rgba(29,46,95, 0.7);
+  -moz-box-shadow: 1px 2px 5px 0px rgba(29,46,95, 0.7);
+  box-shadow: 1px 2px 5px 0px rgba(29,46,95, 0.7);
 }
 
 .email-img {

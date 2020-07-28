@@ -6,19 +6,26 @@ import SEO from "../seo"
 import placeHolderImage from '../../assets/img/job.jpg'
 
 const renderTermNodes = (nodes, title) => (
-  <div>
+  <p>
     {title}
     {` `}
-    {nodes.map(term => (
-      <div>{term.name}</div>
+    {nodes.map((term, index) => (
+      <span className="author">{term.name}
+      {index !== (nodes.length - 1) && <>&nbsp;•&nbsp;</>}
+      </span>
     ))}
-  </div> 
+  </p> 
 )
 
-const renderTerms = (categoryNodes = [], tagNodes = []) => (
+const renderTags = (tagNodes = []) => (
+  <Fragment>
+    {tagNodes && tagNodes.length ? renderTermNodes(tagNodes, `Tags: `) : null }
+  </Fragment>
+)
+
+const renderCategories = (categoryNodes = []) => (
   <Fragment>
     {categoryNodes ? renderTermNodes(categoryNodes, `Categories: `) : null}
-    {tagNodes && tagNodes.length ? renderTermNodes(tagNodes, `Tags: `) : null }
   </Fragment>
 )
 
@@ -52,6 +59,7 @@ class PostPage extends Component {
                   <h3 className="l1-txt2 p-b-40"><span dangerouslySetInnerHTML={{ __html: title }} /> <i className="dot-box dot-box_yellow"></i></h3>            
                   <div className="single__box-meta">
                     <p><span className="author">{post.author.name}</span> - {readTime} min read</p>
+                    {renderCategories(post.categories.nodes)}
                   </div>
                 </div>
               </div>
@@ -64,8 +72,8 @@ class PostPage extends Component {
               
                   <div className="col-12 single-post_content">
                   <div dangerouslySetInnerHTML={{ __html: content }} />
-                    {post.categories.nodes.length || post.tags.nodes.length
-                    ? renderTerms(post.categories.nodes, post.tags.nodes)
+                    {post.tags.nodes.length
+                    ? renderTags(post.tags.nodes)
                     : null}
                   </div>
               </div>

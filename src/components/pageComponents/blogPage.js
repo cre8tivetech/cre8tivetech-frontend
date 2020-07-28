@@ -39,7 +39,7 @@ class BlogPage extends Component {
         <div
           className="pagination_right"
         >
-          <Link className="red-underline-from-left" to={`/blog/${pageNumber + 1}`}>>Next Page <i className="zmdi zmdi-long-arrow-right"></i></Link>
+          <Link className="red-underline-from-left" to={`/blog/${pageNumber + 1}`}>Next Page <i className="zmdi zmdi-long-arrow-right"></i></Link>
         </div>
       )
     } else {
@@ -74,23 +74,6 @@ class BlogPage extends Component {
 
         <section className="boxc">
           <div className="container">
-          {(data &&
-            data.wpgraphql && data.wpgraphql.posts)?
-            <div className="blog__nav">
-              <Link className="red-underline-from-left" to={`/blog/tag/programming`}>Programming</Link>
-              &nbsp;•&nbsp; 
-              <Link className="red-underline-from-left" to={`/blog/tag/design`}>Design</Link>
-              &nbsp;•&nbsp;  
-              <Link className="red-underline-from-left" to={`/blog/tag/business`}>Business</Link>
-              &nbsp;•&nbsp; 
-              <Link className="red-underline-from-left" to={`/blog/tag/technology`}>Technology</Link>
-              &nbsp;•&nbsp; 
-              <Link className="red-underline-from-left" to={`/blog/tag/marketing-strategies`}>Marketing Strategies</Link>
-              &nbsp;•&nbsp; 
-              <Link className="red-underline-from-left" to={`/blog/tag/lifestyle`}>Lifestyle</Link>
-            </div>
-          : null
-          }
             <div className="blog">
             {data &&
             data.wpgraphql &&

@@ -17,6 +17,14 @@ const PostEntry = ({ post }) => {
         <div className="blog__box-meta">
           <p><span className="author">{post.author.name}</span> - {readTime} min read</p>
         </div>
+        
+        <div className="blog__box-meta">
+          {post.categories.nodes.map((i, index) => (
+            <span className="author">{i.name}
+            {index !== (post.categories.nodes.length - 1) && <>&nbsp;•&nbsp;</>}
+            </span>
+          ))}
+        </div>
         <div className="blog__box-title">
           <h3>
             <span
@@ -57,6 +65,11 @@ export const query = graphql`
       slug
       avatar(size: 100) {
         url
+      }
+    }
+    categories {
+      nodes {
+        name
       }
     }
   }

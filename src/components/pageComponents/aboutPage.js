@@ -5,7 +5,7 @@ import gyft from "../../assets/img/gyft.jpg";
 import josh from "../../assets/img/josh.jpg";
 import presh from "../../assets/img/presh.jpg";
 import blackpen from "../../assets/img/blackpen.jpg";
-import codeene from "../../assets/img/codeene.png";
+import sh from "../../assets/img/sh.png";
 import ablegenius from "../../assets/img/ablegenius.png";
 import restable from "../../assets/img/restable.png";
 import topline from "../../assets/img/topline.png";
@@ -191,7 +191,7 @@ class AboutPage extends Component {
 
             <div className="row">
               <div className="clients__box">
-               <img className="lazyload" data-src={codeene} alt=""/>
+               <img className="lazyload" data-src={sh} alt=""/>
               </div>
               <div className="clients__box">
                <img className="lazyload" data-src={ablegenius} alt=""/>
