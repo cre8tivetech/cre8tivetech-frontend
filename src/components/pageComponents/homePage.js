@@ -183,7 +183,7 @@ class Landing extends Component {
           </div>
         </section>
 
-        <section id="about" className="boxf">
+        {/* <section id="about" className="boxf">
           <div className="container">
 
             <div className="row">
@@ -207,7 +207,7 @@ class Landing extends Component {
             </div>
 
           </div>
-        </section>
+        </section> */}
 
         <section id="stories" className="insta">
           <div className="container">
