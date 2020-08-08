@@ -55,7 +55,7 @@ class AboutPage extends Component {
     };
     return (
         <Layout location={this.props.location}>
-        <SEO title="Take a Tour and Learn Page Us - Your Branding and Software Agency" />
+        <SEO title="Take a Tour and Learn About Us - Your Branding and Software Agency" />
         <div className="dark-modal">
           <i onClick={this.closeVideoModal} className="zmdi zmdi-close close-video"></i>
           <div className="video-player">
