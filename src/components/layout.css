@@ -1931,7 +1931,8 @@ label[for=budget] {
 
 .packages-row {
   color: var(--primary-color);
-  padding-top: 50px;
+  padding-top: 100px;
+  margin-top: -50px;
   font-family: var(--primary-font);
   align-items: center;
 }
@@ -1983,6 +1984,11 @@ label[for=budget] {
   border-radius: 100%;
   background: #ffbb4541;
   color: green;
+}
+
+.packages__items .canceled {
+  text-decoration: line-through;
+  opacity: 0.5;
 }
 
 .packages__price {

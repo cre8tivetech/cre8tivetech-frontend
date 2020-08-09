@@ -84,11 +84,14 @@ const OurPackagesPage = ({ location }) => {
                   <h3 className="packages__head">Basic</h3>
                   <hr />
                   <ul className="packages__items">
-                    <li><i className="zmdi zmdi-check"></i> Logo Design</li>
-                    <li><i className="zmdi zmdi-check"></i> Business Card Design</li>
-                    <li><i className="zmdi zmdi-check"></i> Letter Head Design</li>
-                    <li><i className="zmdi zmdi-check"></i> ID Card Design</li>
-                    <li><i className="zmdi zmdi-check"></i> E-flyer Design</li>
+                    <li><i className="zmdi zmdi-check"></i> <p>Logo Design</p></li>
+                    <li><i className="zmdi zmdi-check"></i> <p>Business Card Design</p></li>
+                    <li><i className="zmdi zmdi-check"></i> <p>Letter Head Design</p></li>
+                    <li><i className="zmdi zmdi-check"></i> <p>ID Card Design</p></li>
+                    <li><i className="zmdi zmdi-check"></i> <p className="canceled">Calender Design X 5 Copies Print</p></li>
+                    <li><i className="zmdi zmdi-check"></i> <p className="canceled">Rollup Banner Design X 1 Print</p></li>
+                    <li><i className="zmdi zmdi-check"></i> <p className="canceled">Branded Shirt Design X 10 Pcs Print</p></li>
+                    <li><i className="zmdi zmdi-check"></i> <p>E-flyer Design</p></li>
                   </ul>
                   <div className="packages__price">29,999</div>
                   <div className="packages__btn-container">
@@ -99,11 +102,14 @@ const OurPackagesPage = ({ location }) => {
                   <h3 className="packages__head">Standard</h3>
                   <hr />
                   <ul className="packages__items">
-                    <li><i className="zmdi zmdi-check"></i> Logo Design</li>
-                    <li><i className="zmdi zmdi-check"></i> Business Card Design X 100 Copies Print</li>
-                    <li><i className="zmdi zmdi-check"></i> Letter Head Design X 100 Copies Print</li>
-                    <li><i className="zmdi zmdi-check"></i> ID Card Design X 2 Copies Print</li>
-                    <li><i className="zmdi zmdi-check"></i> E-flyer Design</li>
+                    <li><i className="zmdi zmdi-check"></i> <p>Logo Design</p></li>
+                    <li><i className="zmdi zmdi-check"></i> <p>Business Card Design X 100 Copies Print</p></li>
+                    <li><i className="zmdi zmdi-check"></i> <p>Letter Head Design X 100 Copies Print</p></li>
+                    <li><i className="zmdi zmdi-check"></i> <p>ID Card Design X 2 Copies Print</p></li>
+                    <li><i className="zmdi zmdi-check"></i> <p className="canceled">Calender Design X 5 Copies Print</p></li>
+                    <li><i className="zmdi zmdi-check"></i> <p className="canceled">Rollup Banner Design X 1 Print</p></li>
+                    <li><i className="zmdi zmdi-check"></i> <p className="canceled">Branded Shirt Design X 10 Pcs Print</p></li>
+                    <li><i className="zmdi zmdi-check"></i> <p>E-flyer Design</p></li>
                   </ul>
                   <div className="packages__price">79,999</div>
                   <div className="packages__btn-container">
@@ -114,14 +120,14 @@ const OurPackagesPage = ({ location }) => {
                   <h3 className="packages__head">Premium</h3>
                   <hr />
                   <ul className="packages__items">
-                    <li><i className="zmdi zmdi-check"></i> Logo Design</li>
-                    <li><i className="zmdi zmdi-check"></i> Business Card Design X 100 Copies Print</li>
-                    <li><i className="zmdi zmdi-check"></i> Letter Head Design X 100 Copies Print</li>
-                    <li><i className="zmdi zmdi-check"></i> ID Card Design X 2 Copies Print</li>
-                    <li><i className="zmdi zmdi-check"></i> Calender Design X 5 Copies Print</li>
-                    <li><i className="zmdi zmdi-check"></i> Rollup Banner Design X 1 Print</li>
-                    <li><i className="zmdi zmdi-check"></i> Branded Shirt Design X 10 Pcs Print</li>
-                    <li><i className="zmdi zmdi-check"></i> E-flyer Design</li>
+                    <li><i className="zmdi zmdi-check"></i> <p>Logo Design</p></li>
+                    <li><i className="zmdi zmdi-check"></i> <p>Business Card Design X 100 Copies Print</p></li>
+                    <li><i className="zmdi zmdi-check"></i> <p>Letter Head Design X 100 Copies Print</p></li>
+                    <li><i className="zmdi zmdi-check"></i> <p>ID Card Design X 2 Copies Print</p></li>
+                    <li><i className="zmdi zmdi-check"></i> <p>Calender Design X 5 Copies Print</p></li>
+                    <li><i className="zmdi zmdi-check"></i> <p>Rollup Banner Design X 1 Print</p></li>
+                    <li><i className="zmdi zmdi-check"></i> <p>Branded Shirt Design X 10 Pcs Print</p></li>
+                    <li><i className="zmdi zmdi-check"></i> <p>E-flyer Design</p></li>
                   </ul>
                   <div className="packages__price">165,999</div>
                   <div className="packages__btn-container">
