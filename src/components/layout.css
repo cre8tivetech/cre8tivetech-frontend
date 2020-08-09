@@ -625,12 +625,14 @@ body {
   /* -webkit-box-shadow: 1px 2px 5px 0px rgba(226, 43, 43,0.7);
   -moz-box-shadow: 1px 2px 5px 0px rgba(226, 43, 43,0.7);
   box-shadow: 1px 2px 5px 0px rgba(226, 43, 43,0.7); */
+  transition: all .2s ease-in-out;
 }
 
 .services__box img:hover {
   -webkit-box-shadow: 1px 2px 5px 0px rgba(29,46,95, 0.7);
   -moz-box-shadow: 1px 2px 5px 0px rgba(29,46,95, 0.7);
   box-shadow: 1px 2px 5px 0px rgba(29,46,95, 0.7);
+  transform: scale(1.06);
 }
 
 .services__box h2 {
@@ -1106,11 +1108,13 @@ pre::-webkit-scrollbar-corner {
   -webkit-box-shadow: 1px 2px 5px 0px rgba(226, 43, 43,0.7);
   -moz-box-shadow: 1px 2px 5px 0px rgba(226, 43, 43,0.7);
   box-shadow: 1px 2px 5px 0px rgba(226, 43, 43,0.7);
+  transition: all .2s ease-in-out;
 }
 .subscribe:hover {
   -webkit-box-shadow: 1px 2px 5px 0px rgba(29,46,95, 0.7);
   -moz-box-shadow: 1px 2px 5px 0px rgba(29,46,95, 0.7);
   box-shadow: 1px 2px 5px 0px rgba(29,46,95, 0.7);
+  transform: scale(.96);
 }
 
 .email-img {
@@ -1939,6 +1943,14 @@ label[for=budget] {
   -webkit-box-shadow: 1px 2px 5px 0px rgba(226, 43, 43,0.7);
   -moz-box-shadow: 1px 2px 5px 0px rgba(226, 43, 43,0.7);
   box-shadow: 1px 2px 5px 0px rgba(226, 43, 43,0.7);
+  transition: all .2s ease-in-out;
+}
+
+.packages_card:hover {
+  -webkit-box-shadow: 1px 2px 5px 0px rgba(29,46,95, 0.7);
+  -moz-box-shadow: 1px 2px 5px 0px rgba(29,46,95, 0.7);
+  box-shadow: 1px 2px 5px 0px rgba(29,46,95, 0.7);
+  transform: scale(1.06);
 }
 
 .packages_card hr {
@@ -1950,8 +1962,9 @@ label[for=budget] {
 .packages__head {
   text-align: center;
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   padding-bottom: 20px;
+  padding-top: 0;
 }
 
 .packages__items {
