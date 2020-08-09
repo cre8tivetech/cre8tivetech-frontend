@@ -9,13 +9,15 @@ import SEO from "../seo"
 const OurPackagesPage = ({ location }) => {
   const [page, setPage] = useState('branding')
   useEffect(() => {
-    if (location.hash === "" || location.hash === "branding")
-      setPage('branding')
-    if (location.hash === "web-development")
-      setPage('web-development')
-    if (location.hash === "social-media")
-      setPage('social-media')
+    if (location.hash === "" || location.hash === "#branding")
+    setPage('branding')
+    if (location.hash === "#web-development")
+    setPage('web-development')
+    if (location.hash === "#social-media")
+    setPage('social-media')
   }, [])
+  console.log(location.hash);
+  console.log('page: ', page);
   const mystyle = {
     // background: `linear-gradient(180deg, rgba(29,45,95,0.8) 10%, rgba(64,206,227,0.8) 90%), url(${image})`,
     background: `var(--primary-color)`,
@@ -76,19 +78,58 @@ const OurPackagesPage = ({ location }) => {
               </li>
             </ul>
           </nav>
-            {/* {page === 'branding' &&
-              <div id="branding" className="row">
+            {page === 'branding' &&
+              <div id="branding" className="row packages-row">
                 <div className="col-4 packages_card">
-                  Card
+                  <h3 className="packages__head">Basic</h3>
+                  <hr />
+                  <ul className="packages__items">
+                    <li><i className="zmdi zmdi-check"></i> Logo Design</li>
+                    <li><i className="zmdi zmdi-check"></i> Business Card Design</li>
+                    <li><i className="zmdi zmdi-check"></i> Letter Head Design</li>
+                    <li><i className="zmdi zmdi-check"></i> ID Card Design</li>
+                    <li><i className="zmdi zmdi-check"></i> E-flyer Design</li>
+                  </ul>
+                  <div className="packages__price">29,999</div>
+                  <div className="packages__btn-container">
+                    <button className="packages__btn">Select</button>
+                  </div>
                 </div>
                 <div className="col-4 packages_card">
-                  Card
+                  <h3 className="packages__head">Standard</h3>
+                  <hr />
+                  <ul className="packages__items">
+                    <li><i className="zmdi zmdi-check"></i> Logo Design</li>
+                    <li><i className="zmdi zmdi-check"></i> Business Card Design X 100 Copies Print</li>
+                    <li><i className="zmdi zmdi-check"></i> Letter Head Design X 100 Copies Print</li>
+                    <li><i className="zmdi zmdi-check"></i> ID Card Design X 2 Copies Print</li>
+                    <li><i className="zmdi zmdi-check"></i> E-flyer Design</li>
+                  </ul>
+                  <div className="packages__price">79,999</div>
+                  <div className="packages__btn-container">
+                    <button className="packages__btn">Select</button>
+                  </div>
                 </div>
                 <div className="col-4 packages_card">
-                  Card
+                  <h3 className="packages__head">Premium</h3>
+                  <hr />
+                  <ul className="packages__items">
+                    <li><i className="zmdi zmdi-check"></i> Logo Design</li>
+                    <li><i className="zmdi zmdi-check"></i> Business Card Design X 100 Copies Print</li>
+                    <li><i className="zmdi zmdi-check"></i> Letter Head Design X 100 Copies Print</li>
+                    <li><i className="zmdi zmdi-check"></i> ID Card Design X 2 Copies Print</li>
+                    <li><i className="zmdi zmdi-check"></i> Calender Design X 5 Copies Print</li>
+                    <li><i className="zmdi zmdi-check"></i> Rollup Banner Design X 1 Print</li>
+                    <li><i className="zmdi zmdi-check"></i> Branded Shirt Design X 10 Pcs Print</li>
+                    <li><i className="zmdi zmdi-check"></i> E-flyer Design</li>
+                  </ul>
+                  <div className="packages__price">165,999</div>
+                  <div className="packages__btn-container">
+                    <button className="packages__btn">Select</button>
+                  </div>
                 </div>
               </div>
-            } */}
+            }
             <div className="pagination">
             </div>
 
