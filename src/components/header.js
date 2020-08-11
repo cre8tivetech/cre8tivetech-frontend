@@ -64,15 +64,7 @@ class Header extends Component {
                       <li className="list">
                         <Link className="underline-from-left" to="/hire-us">Let's Talk</Link>
                       </li>
-    
-                      {/* <Link to="/hire-us">
-                        {this.props.path.pathname === "/hire-us"?
-                            <button className="nav-btn red">Hire Us</button>
-                        : 
-                            <button className="nav-btn">Hire Us</button>
-                        }
-                      </Link> */}
-                      
+                                   
                   </ul>  
             </nav>
             <i onClick={this.openMobileNav} className="zmdi zmdi-menu menu"></i>

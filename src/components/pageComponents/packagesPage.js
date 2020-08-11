@@ -52,7 +52,7 @@ const OurPackagesPage = ({ location }) => {
             <ul>
               <li>
                 <Link
-                  className={page === 'branding' ? 'active underline-from-left' : 'underline-from-left'}
+                  className={page === 'branding' ? 'active red-underline-from-left' : 'red-underline-from-left'}
                   onClick={() => setPage('branding')}
                   to="/packages/#branding"
                 >
@@ -61,7 +61,7 @@ const OurPackagesPage = ({ location }) => {
               </li>
               <li>
                 <Link
-                  className={page === 'web-development'? 'active underline-from-left' : 'underline-from-left'}
+                  className={page === 'web-development'? 'active red-underline-from-left' : 'red-underline-from-left'}
                   onClick={() => setPage('web-development')}
                   to="/packages/#web-development"
                 >
@@ -70,7 +70,7 @@ const OurPackagesPage = ({ location }) => {
               </li>
               <li>
                 <Link
-                  className={page === 'social-media' ? 'active underline-from-left' : 'underline-from-left'}
+                  className={page === 'social-media' ? 'active red-underline-from-left' : 'red-underline-from-left'}
                   onClick={() => setPage('social-media')}
                   to="/packages/#social-media"
                 >
