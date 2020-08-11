@@ -1903,6 +1903,8 @@ label[for=budget] {
 
 .packages-nav {
   width: 100%;
+  margin-bottom: 100px;
+  padding-top: 50px;
 }
 
 .packages-nav ul {
@@ -1910,6 +1912,7 @@ label[for=budget] {
   justify-content: center;
   color: var(--primary-color);
   font-family: var(--primary-font);
+  text-transform: uppercase;
 }
 
 .packages-nav li {
@@ -1932,10 +1935,11 @@ label[for=budget] {
 
 .packages-row {
   color: var(--primary-color);
-  padding-top: 100px;
-  margin-top: -50px;
+  padding-top: 250px;
+  margin-top: -250px;
   font-family: var(--primary-font);
   align-items: center;
+  /* border: 1px solid #1d2d5f; */
 }
 
 .packages_card {
@@ -2019,6 +2023,7 @@ label[for=budget] {
   background: #ffbb4541;
   padding: 5px 0;
   padding-left: -30px;
+  font-family: Montserrat-Regular;
 }
 
 .packages__btn-container {

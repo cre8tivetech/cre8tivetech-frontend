@@ -42,7 +42,7 @@ const socialMediaServices = [
 const packages = {
   branding: {
     basic: {
-      price: '29,999',
+      price: 'N29,999',
       services: [
         {
           name: brandingServices[0],
@@ -79,7 +79,7 @@ const packages = {
       ]
     },
     standard: {
-      price: '79,999',
+      price: 'N79,999',
       services: [
         {
           name: brandingServices[0],
@@ -116,7 +116,7 @@ const packages = {
       ]
     },
     premium: {
-      price: '165,999',
+      price: 'N165,999',
       services: [
         {
           name: brandingServices[0],
@@ -155,7 +155,7 @@ const packages = {
   },
   web: {
     basic: {
-      price: '60,000',
+      price: 'N60,000',
       services: [
         {
           name: webServices[0],
@@ -192,7 +192,7 @@ const packages = {
       ]
     },
     standard: {
-      price: '120,000',
+      price: 'N120,000',
       services: [
         {
           name: webServices[0],
@@ -229,7 +229,7 @@ const packages = {
       ]
     },
     premium: {
-      price: '260,000',
+      price: 'N260,000',
       services: [
         {
           name: webServices[0],
@@ -268,7 +268,7 @@ const packages = {
   },
   socialMedia: {
     basic: {
-      price: '60,000',
+      price: 'N60,000',
       services: [
         {
           name: webServices[0],
@@ -305,7 +305,7 @@ const packages = {
       ]
     },
     standard: {
-      price: '120,000',
+      price: 'N120,000',
       services: [
         {
           name: webServices[0],
@@ -342,7 +342,7 @@ const packages = {
       ]
     },
     premium: {
-      price: '260,000',
+      price: 'N260,000',
       services: [
         {
           name: webServices[0],
