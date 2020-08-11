@@ -15,7 +15,7 @@ const loader = (
 )
 
 const LoadableComponent = MyLoadable({
-  loader: () => import('../components/pageComponents/ourPackagesPage'),
+  loader: () => import('../components/pageComponents/packagesPage'),
   loading() {
     return (
       <div className="loader">{loader}</div>

@@ -54,7 +54,7 @@ class Header extends Component {
                       </li>
 
                       <li className="list">
-                        <Link className="underline-from-left" to="/our-packages">Our Packages</Link>
+                        <Link className="underline-from-left" to="/packages">Our Packages</Link>
                       </li>
                   
                       <li className="list">
@@ -94,7 +94,7 @@ class Header extends Component {
               </li>
                 
               <li className="list">
-                <Link onClick={this.closeMobileNav} className="underline-from-left" to="/our-packages">Our Packages</Link>
+                <Link onClick={this.closeMobileNav} className="underline-from-left" to="/packages">Our Packages</Link>
               </li>
 
               <li className="list">
