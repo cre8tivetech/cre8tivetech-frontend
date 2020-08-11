@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 
-// import PageEntry from "./pageEntry"
+import PackagesEntry from "./packagesEntry"
 import Layout from "../layout"
 import SEO from "../seo"
-// import image from "../../assets/img/work.jpg";
+import Packages from "../../../packages";
 
 const OurPackagesPage = ({ location }) => {
   const [page, setPage] = useState('branding')
+  const { branding, web, socialMedia } = Packages;
   useEffect(() => {
     if (location.hash === "" || location.hash === "#branding")
     setPage('branding')
@@ -79,65 +80,11 @@ const OurPackagesPage = ({ location }) => {
             </ul>
           </nav>
             {page === 'branding' &&
-              <div id="branding" className="row packages-row">
-                <div className="col-4 packages_card">
-                  <h3 className="packages__head">Basic</h3>
-                  <hr />
-                  <ul className="packages__items">
-                    <li><i className="zmdi zmdi-check"></i> <p>Logo Design</p></li>
-                    <li><i className="zmdi zmdi-check"></i> <p>Business Card Design</p></li>
-                    <li><i className="zmdi zmdi-check"></i> <p>Letter Head Design</p></li>
-                    <li><i className="zmdi zmdi-check"></i> <p>ID Card Design</p></li>
-                    <li><i className="zmdi zmdi-check"></i> <p className="canceled">Calender Design X 5 Copies Print</p></li>
-                    <li><i className="zmdi zmdi-check"></i> <p className="canceled">Rollup Banner Design X 1 Print</p></li>
-                    <li><i className="zmdi zmdi-check"></i> <p className="canceled">Branded Shirt Design X 10 Pcs Print</p></li>
-                    <li><i className="zmdi zmdi-check"></i> <p>E-flyer Design</p></li>
-                  </ul>
-                  <div className="packages__price">29,999</div>
-                  <div className="packages__btn-container">
-                    <button className="packages__btn">Select</button>
-                  </div>
-                </div>
-                <div className="col-4 packages_card">
-                  <h3 className="packages__head">Standard</h3>
-                  <hr />
-                  <ul className="packages__items">
-                    <li><i className="zmdi zmdi-check"></i> <p>Logo Design</p></li>
-                    <li><i className="zmdi zmdi-check"></i> <p>Business Card Design X 100 Copies Print</p></li>
-                    <li><i className="zmdi zmdi-check"></i> <p>Letter Head Design X 100 Copies Print</p></li>
-                    <li><i className="zmdi zmdi-check"></i> <p>ID Card Design X 2 Copies Print</p></li>
-                    <li><i className="zmdi zmdi-check"></i> <p className="canceled">Calender Design X 5 Copies Print</p></li>
-                    <li><i className="zmdi zmdi-check"></i> <p className="canceled">Rollup Banner Design X 1 Print</p></li>
-                    <li><i className="zmdi zmdi-check"></i> <p className="canceled">Branded Shirt Design X 10 Pcs Print</p></li>
-                    <li><i className="zmdi zmdi-check"></i> <p>E-flyer Design</p></li>
-                  </ul>
-                  <div className="packages__price">79,999</div>
-                  <div className="packages__btn-container">
-                    <button className="packages__btn">Select</button>
-                  </div>
-                </div>
-                <div className="col-4 packages_card">
-                  <h3 className="packages__head">Premium</h3>
-                  <hr />
-                  <ul className="packages__items">
-                    <li><i className="zmdi zmdi-check"></i> <p>Logo Design</p></li>
-                    <li><i className="zmdi zmdi-check"></i> <p>Business Card Design X 100 Copies Print</p></li>
-                    <li><i className="zmdi zmdi-check"></i> <p>Letter Head Design X 100 Copies Print</p></li>
-                    <li><i className="zmdi zmdi-check"></i> <p>ID Card Design X 2 Copies Print</p></li>
-                    <li><i className="zmdi zmdi-check"></i> <p>Calender Design X 5 Copies Print</p></li>
-                    <li><i className="zmdi zmdi-check"></i> <p>Rollup Banner Design X 1 Print</p></li>
-                    <li><i className="zmdi zmdi-check"></i> <p>Branded Shirt Design X 10 Pcs Print</p></li>
-                    <li><i className="zmdi zmdi-check"></i> <p>E-flyer Design</p></li>
-                  </ul>
-                  <div className="packages__price">165,999</div>
-                  <div className="packages__btn-container">
-                    <button className="packages__btn">Select</button>
-                  </div>
-                </div>
-              </div>
+              <PackagesEntry _package={branding} title='branding' />
             }
-            <div className="pagination">
-            </div>
+            {page === 'web-development' &&
+              <PackagesEntry _package={web} title='web-development' />
+            }
 
           </div>
         </section>

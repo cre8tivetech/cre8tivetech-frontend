@@ -115,8 +115,8 @@ const packages = {
         },
       ]
     },
-    standard: {
-      price: '79,999',
+    premium: {
+      price: '165,999',
       services: [
         {
           name: brandingServices[0],
@@ -228,7 +228,7 @@ const packages = {
         },
       ]
     },
-    standard: {
+    premium: {
       price: '260,000',
       services: [
         {
@@ -341,7 +341,7 @@ const packages = {
         },
       ]
     },
-    standard: {
+    premium: {
       price: '260,000',
       services: [
         {
@@ -380,3 +380,5 @@ const packages = {
     },
   }
 }
+
+export default packages;
