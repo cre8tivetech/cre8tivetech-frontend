@@ -14,10 +14,11 @@ const packagesEntry = ({ _package, title }) => {
         </ul>
         <div className="packages__price">{basic.price}</div>
         <div className="packages__btn-container">
-          <button className="packages__btn">Select</button>
+          <button className="packages__btn">SELECT</button>
         </div>
       </div>
       <div className="col-4 packages_card">
+        <div className="packages_card__recommended"><i className="zmdi zmdi-star"></i><p>Recommended</p></div>
         <h3 className="packages__head">Standard</h3>
         <hr />
         <ul className="packages__items">
@@ -27,7 +28,7 @@ const packagesEntry = ({ _package, title }) => {
         </ul>
         <div className="packages__price">{standard.price}</div>
         <div className="packages__btn-container">
-          <button className="packages__btn">Select</button>
+          <button className="packages__btn">SELECT</button>
         </div>
       </div>
       <div className="col-4 packages_card">
@@ -40,7 +41,7 @@ const packagesEntry = ({ _package, title }) => {
         </ul>
         <div className="packages__price">{premium.price}</div>
         <div className="packages__btn-container">
-          <button className="packages__btn">Select</button>
+          <button className="packages__btn">SELECT</button>
         </div>
       </div>
     </div>

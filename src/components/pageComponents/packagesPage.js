@@ -34,7 +34,7 @@ const OurPackagesPage = ({ location }) => {
           <div className="container">
             <div className="intro">
               <div className="col-6 intro__text">
-                <h3 className="l1-txt2 p-b-40">Our Packages <i className="dot-box dot-box_yellow"></i></h3>            
+                <h3 className="l1-txt2 p-b-40">Packages <i className="dot-box dot-box_yellow"></i></h3>            
                 <p>
                   Select one of our packages:<br/> 
                   - Branding<br/>
