@@ -52,6 +52,45 @@
 *::-moz-selection { color: red; background: #ffbc45;}
 *::selection { color: #ffbc45; background: #ffbb4541;}
 
+*, *:before, *:after {
+	margin: 0px; 
+	padding: 0px; 
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/*---------------------------------------------*/
+a:focus {outline: none;}
+a:hover {text-decoration: none;}
+
+/* ------------------------------------ */
+h1,h2,h3,h4,h5,h6,p {margin: 0px;}
+
+ul, li {
+	margin: 0px;
+	list-style-type: none;
+}
+
+
+/* ------------------------------------ */
+input, textarea, label {
+	display: block;
+	outline: none;
+	border: none;
+}
+
+/* ------------------------------------ */
+button {
+	outline: none;
+	border: none;
+	background: transparent;
+	/* cursor: pointer; */
+}
+button:focus {outline: none;}
+
+iframe {border: none;}
+
 a {
   color: inherit;
 }
@@ -846,12 +885,29 @@ body {
   word-break: break-word;
 }
 
-.single-post_content h2, h3 {
-  padding-top: 30px;
+.single-post_content .big-txt {
+  font-size: 2.5rem !important;
 }
-.single-post_content h3, h4, h5, h6 {
+
+.single-post_content h2, 
+.single-post_content h3 {
+  padding-top: 30px;
+  font-size: 1.5rem;
+}
+.single-post_content h4, 
+.single-post_content h5, 
+.single-post_content h6 {
   padding-top: 20px;
 }
+
+.single-post_content ul {
+  padding-left: 30px;
+}
+
+.single-post_content li {
+  list-style-type: disc;
+}
+
 .single-post_content blockquote {
   border-left: 5px solid var(--primary-color);
   background-color: #F5F5F5;
@@ -859,6 +915,22 @@ body {
   margin: 30px 0;
   font-family: Montserrat-Alternates-Medium;
   font-weight: 600;
+}
+
+.single-post_content img {
+  /* margin: 20px 0; */
+  max-width: 95%;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+.single-post_content figcaption {
+  color: rgb(177, 173, 173);
+  font-style: italic;
+}
+
+.single-post_content figure {
+  margin: 40px 0;
 }
 
 .single-post_content pre {
@@ -2790,45 +2862,6 @@ input.input100 {
 
 /*//////////////////////////////////////////////////////////////////
 [ REBOOT ]*/
-*, *:before, *:after {
-	margin: 0px; 
-	padding: 0px; 
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-/*---------------------------------------------*/
-a:focus {outline: none;}
-a:hover {text-decoration: none;}
-
-/* ------------------------------------ */
-h1,h2,h3,h4,h5,h6,p {margin: 0px;}
-
-ul, li {
-	margin: 0px;
-	list-style-type: none;
-}
-
-
-/* ------------------------------------ */
-input, textarea, label {
-	display: block;
-	outline: none;
-	border: none;
-}
-
-/* ------------------------------------ */
-button {
-	outline: none;
-	border: none;
-	background: transparent;
-	/* cursor: pointer; */
-}
-button:focus {outline: none;}
-
-iframe {border: none;}
-
 
 /*//////////////////////////////////////////////////////////////////
 [ FONT SIZE ]*/
