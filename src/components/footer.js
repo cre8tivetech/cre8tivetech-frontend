@@ -45,17 +45,19 @@ class Footer extends Component {
     const lazyApp = import("@firebase/app")
     const lazyDatabase = import("@firebase/database")
 
-    // Promise.all([lazyApp, lazyDatabase]).then(([firebase]) => {
-    //   const database = getFirebase(firebase).database()
+    Promise.all([lazyApp, lazyDatabase]).then(([firebase]) => {
+      const database = getFirebase(firebase).database()
 
-    //   //Reference messeges collection
-    //   const newslettersRef = getFirebase(firebase).database().ref('newsletter');
+      //Reference messeges collection
+      const newslettersRef = getFirebase(firebase)
+        .database()
+        .ref("newsletter")
 
-    //   this.setState({
-    //     database,
-    //     newslettersRef
-    //   })
-    // })
+      this.setState({
+        database,
+        newslettersRef,
+      })
+    })
   }
 
   changeHandler = event => {
