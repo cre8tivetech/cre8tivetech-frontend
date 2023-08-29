@@ -154,16 +154,6 @@ class AboutPage extends Component {
                   <p>Snr. Marketing Manager</p>
                 </div>
               </div>
-
-              {/* <div class="col-3 team-feed">
-                <div className="team-image">
-                  <img className="lazyload" data-src={blackpen} alt="" />
-                </div>
-                <div className="team-details">
-                  <h3>Oludamola Oni</h3>
-                  <p>Snr. Content Writer</p>
-                </div>
-              </div> */}
             </div>
           </div>
         </section>
